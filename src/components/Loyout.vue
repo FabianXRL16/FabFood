@@ -1,14 +1,16 @@
 <template>
     <div>
-        loyout
+        <ffheader />
     </div>
 </template>
 
 <script>
-
+import ffheader from "../components/general/ffheader.vue";
 export default {
     name: "Loyout",
-    components:{},
+    components:{
+        ffheader
+    },
     data(){
         return{}
     }
