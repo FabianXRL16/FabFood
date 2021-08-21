@@ -16,8 +16,12 @@ export default {
 </script>
 
 <style>
+@import "./assets/styles/variables.css";
 html, body{
   margin: 0;
-  font-family: sans-serif;
+  font-family: var(--font_primary);
+  background-image: url(./assets/img/background-home.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 </style>

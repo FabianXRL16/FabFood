@@ -1,0 +1,19 @@
+/* FONTS */
+@font-face {
+  font-family: poppinsRegular;
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: popinsLight;
+  src: url(../fonts/Poppins-ExtraLight.ttf);
+}
+
+:root{
+  /* COLORS */
+    --bg-primary: #F20746;
+
+  /* FONTS */
+    --font_primary: poppinsRegular;
+    --font_secondary: poppinsLight;
+}
+
