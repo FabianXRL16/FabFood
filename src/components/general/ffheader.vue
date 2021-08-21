@@ -35,7 +35,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 80px 0;
+  padding: var(--p-main);
   color: var(--white);
   height: 70px;
 }
@@ -59,7 +59,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 60%;
+  width: 70%;
 }
 
 .ffheader__list ul {
