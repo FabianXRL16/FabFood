@@ -11,9 +11,13 @@
 :root{
   /* COLORS */
     --bg-primary: #F20746;
+    --white: #fff;
 
   /* FONTS */
     --font_primary: poppinsRegular;
     --font_secondary: poppinsLight;
+
+  /* FONT SIZEs */
+    --btn-text-primary: 16px;
 }
 
