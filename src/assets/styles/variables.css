@@ -12,6 +12,7 @@
   /* COLORS */
     --bg-primary: #F20746;
     --white: #fff;
+    --black: #1A1A1A;
 
   /* FONTS */
     --font_primary: poppinsRegular;
@@ -19,5 +20,8 @@
 
   /* FONT SIZEs */
     --btn-text-primary: 16px;
+
+  /* PADDING */
+  --p-main: 0 120px 0;
 }
 
