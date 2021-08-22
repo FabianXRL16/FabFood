@@ -1,45 +1,67 @@
 <template>
-    <div class="nav">
-        <div class="place">
-            <img src="../../assets/img/location.svg" alt="">
-            <strong>Chiclayo</strong>
-        </div>
-        <div class="slogan">
-            <h1>Your favorite food at <br>the speed of light</h1>
-        </div>
-        <search />
-    </div>
+  <div class="ffheader__list">
+    <ul>
+      <li v-for="item in list" :key="item.id">
+        <a :href="item.ref">{{ item.subtitle }}</a>
+      </li>
+    </ul>
+  </div>
 </template>
-
 <script>
-import search from "../inputs/search.vue"
 export default {
-    name: "ffnav",
-    components: {
-        search
-    }
-}
+  name: "Nav",
+  data() {
+    return {
+      title: "Confirm order",
+      list: [
+        { id: 1, subtitle: "Find food", ref: "/" },
+        { id: 2, subtitle: "Categories", ref: "/" },
+        { id: 3, subtitle: "About us", ref: "/" },
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped>
-.nav{
-    width: 510px;
-    display: grid;
-    align-content: flex-end;
-    color: var(--white);
+@import "../../assets/styles/variables.css";
+.ffheader__list {
+  height: 70px;
 }
-.place{
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.ffheader__list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-
-.place img{
-    height: 25px;
+.ffheader__list ul li{
+  display: inline-block;
 }
-
-.slogan h1{
-    font-size: 50px;
-    margin: 0 0 15px;
+.ffheader__list ul li a{
+  font-size: var(--text-secondary);
+  text-decoration: none;
+  display: block;
+  padding: 20px 40px;
+  color: var(--white);
+  position: relative;
+}
+.ffheader__list ul li a::after{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: transparent;
+  bottom: 10px;
+  left: 0;
+  transition: .2s;
+}
+.ffheader__list ul li a:hover::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--bg-primary);
+  bottom: 10px;
+  left: 0;
+  transition: .3s;
 }
 </style>

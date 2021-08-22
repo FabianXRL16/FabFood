@@ -18,6 +18,7 @@ button {
   background-color: transparent;
   border: none;
   position: relative;
+  cursor: pointer;
 }
 
 .count {

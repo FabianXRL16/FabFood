@@ -19,9 +19,13 @@
     --font_secondary: poppinsLight;
 
   /* FONT SIZEs */
+   --text-primary: 30px;
+   --text-secondary: 16px;
+
     --btn-text-primary: 16px;
 
   /* PADDING */
-  --p-main: 0 120px 0;
+  --p-main: 0 100px 0;
+  --p-main-mobile: 0 20px 0;
 }
 
