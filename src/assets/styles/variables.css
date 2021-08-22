@@ -19,8 +19,14 @@
     --font_secondary: poppinsLight;
 
   /* FONT SIZEs */
+   --text-title-1: 50px;
+   --text-title-2: 32px;
+
    --text-primary: 30px;
    --text-secondary: 16px;
+   
+   --text-imput: 24px;
+   --text-imput-mobile: 16px;
 
     --btn-text-primary: 16px;
 

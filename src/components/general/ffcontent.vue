@@ -1,16 +1,16 @@
 <template>
   <div class="ffcontent">
-    <ffnav />
+    <ffsectionHome />
     <slider :foods="foodsMain" />
   </div>
 </template>
 
 <script>
-import ffnav from "./ffnavb.vue";
+import ffsectionHome from "./ffsectionHome.vue";
 import slider from "../groups/slider";
 export default {
   name: "Ffnav",
-  components: { ffnav, slider },
+  components: {  ffsectionHome, slider },
   data() {
     return {
       foodsMain: [
@@ -35,7 +35,7 @@ export default {
   padding: var(--p-main);
 }
 
-@media (max-width: 620px){
+@media (max-width: 820px){
   .ffcontent{
     padding: var(--p-main-mobile);
   }

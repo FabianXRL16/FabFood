@@ -22,6 +22,8 @@ export default {
 </script>
 
 <style scoped>
+@import "../../assets/styles/variables.css";
+
 .nav {
   width: 100%;
   display: grid;
@@ -39,16 +41,16 @@ export default {
 }
 
 .slogan h1 {
-  font-size: 50px;
+  font-size: var(--text-title-1);
   margin: 0 0 15px;
 }
 
-@media (max-width: 620px) {
+@media (max-width: 550px) {
   .nav {
     width: 100%;
   }
   .slogan h1 {
-    font-size: 30px;
+    font-size: var(--text-title-2);
     margin: 0 0 10px;
   }
 }
