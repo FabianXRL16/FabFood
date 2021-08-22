@@ -1,16 +1,17 @@
 <template>
   <div id="app">
-    <loyout />
+    <ffheader />
+    <router-view class="content" />
   </div>
 </template>
 
 <script>
-import loyout from '@/components/Loyout.vue'
+import ffheader from "./components/general/ffheader.vue"
 
 export default {
   name: 'App',
   components: {
-    loyout
+    ffheader
   }
 }
 </script>
@@ -25,6 +26,10 @@ html, body{
   background-repeat: no-repeat;
   background-position-x: center;
   height: 100vh;
+}
+
+.content{
+    height: calc(100vh - 70px);
 }
 
 @media (max-width: 500px) { 

@@ -9,7 +9,7 @@
 import ffsectionHome from "./ffsectionHome.vue";
 import slider from "../groups/slider";
 export default {
-  name: "Ffnav",
+  name: "Ffcontent",
   components: {  ffsectionHome, slider },
   data() {
     return {
