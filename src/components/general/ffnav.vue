@@ -1,10 +1,15 @@
 <template>
   <div class="ffheader__list">
-    <ul>
+    <router-link class="router" 
+      v-for="item in list" :key="item.id" 
+      :to="item.ref">
+      {{item.subtitle}}
+    </router-link>
+    <!--<ul>
       <li v-for="item in list" :key="item.id">
         <a :href="item.ref">{{ item.subtitle }}</a>
       </li>
-    </ul>
+    </ul>-->
   </div>
 </template>
 <script>
@@ -14,9 +19,9 @@ export default {
     return {
       title: "Confirm order",
       list: [
-        { id: 1, subtitle: "Find food", ref: "/" },
-        { id: 2, subtitle: "Categories", ref: "/" },
-        { id: 3, subtitle: "About us", ref: "/" },
+        { id: 1, subtitle: "Find food", ref: "/findFood" },
+        { id: 2, subtitle: "Categories", ref: "/categories" },
+        { id: 3, subtitle: "About us", ref: "/AboutUs" },
       ],
     };
   },
@@ -25,18 +30,14 @@ export default {
 
 <style scoped>
 @import "../../assets/styles/variables.css";
+.text {
+  color: red;
+}
 .ffheader__list {
   height: 70px;
+  display: flex;
 }
-.ffheader__list ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.ffheader__list ul li{
-  display: inline-block;
-}
-.ffheader__list ul li a{
+.router {
   font-size: var(--text-secondary);
   text-decoration: none;
   display: block;
@@ -44,7 +45,7 @@ export default {
   color: var(--white);
   position: relative;
 }
-.ffheader__list ul li a::after{
+.router::after {
   content: "";
   position: absolute;
   width: 0;
@@ -52,9 +53,9 @@ export default {
   background: transparent;
   bottom: 10px;
   left: 0;
-  transition: .2s;
+  transition: 0.2s;
 }
-.ffheader__list ul li a:hover::after{
+.router:hover::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -62,6 +63,6 @@ export default {
   background: var(--bg-primary);
   bottom: 10px;
   left: 0;
-  transition: .3s;
+  transition: 0.3s;
 }
 </style>
