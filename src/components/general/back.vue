@@ -1,0 +1,58 @@
+<template>
+  <div class="back__container">
+    <button-arrow :typeBtn="typeBtn">
+      <template>
+        <img src="../../assets/img/arrowLeft.png" alt="Back Page" />
+        <strong>
+          Back
+        </strong>
+      </template>
+    </button-arrow>
+    <h1 class="title">{{ title }}</h1>
+  </div>
+</template>
+
+<script>
+import ButtonArrow from "../inputs/buttonArrow.vue";
+export default {
+  name: "Back",
+  props: {
+    title: {
+      type: String,
+      default: "Find Food",
+    },
+  },
+  components: { ButtonArrow },
+  data() {
+    return {
+      typeBtn: false,
+    };
+  },
+};
+</script>
+
+<style scoped>
+@import "../../assets/styles/variables.css";
+.back__container {
+  padding: var(--p-main);
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+}
+.title {
+  margin: 0;
+  color: var(--white);
+  text-align: center;
+}
+@media (max-width: 1180px) {
+  .back__container {
+    margin: 15px 0;
+  }
+}
+@media (max-width: 820px) {
+  .back__container {
+    margin: 10px 0;
+    padding: var(--p-main-mobile);
+  }
+}
+</style>
