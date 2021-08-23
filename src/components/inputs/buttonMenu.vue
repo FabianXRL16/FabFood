@@ -14,6 +14,7 @@ button{
     border: none;
 }
 button img{
-    height: 40px;
+    height: 30px;
+    margin-top: 4px;
 }
 </style>
