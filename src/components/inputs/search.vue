@@ -1,7 +1,11 @@
 <template>
   <div class="search">
-    <input type="text" placeholder="Buscar ..." />
-    <button>
+    <input
+      :class="find ? 'inputFind' : 'input'"
+      type="text"
+      placeholder="Buscar ..."
+    />
+    <button :class="find ? 'buttonFind' : 'button'">
       <img src="../../assets/img/search.svg" alt="" />
     </button>
   </div>
@@ -10,26 +14,37 @@
 <script>
 export default {
   name: "Search",
+  props: {
+    find: {
+      type: Boolean,
+      default: false,
+    },
+  },
 };
 </script>
 
 <style scoped>
 @import "../../assets/styles/variables.css";
-.search {
+.search{
   display: flex;
   align-items: center;
-  position: relative;
 }
 input {
-  width: 550px;
   height: 50px;
   border-radius: 40px;
-  padding: 0 20px;
+  padding: 0 68.5px 0 20px;
   box-sizing: border-box;
   outline: none;
   border: none;
+}
+.input {
+  width: 550px;
   font-size: var(--text-imput);
   color: var(--black);
+}
+.inputFind {
+  width: 100%;
+  font-size: 18px;
 }
 button {
   border: none;
@@ -37,10 +52,15 @@ button {
   height: 45px;
   width: 45px;
   border-radius: 25px;
-  position: absolute;
-  left: 502.5px;
   transition: 0.2s;
   cursor: pointer;
+}
+.button {
+  margin-left: -47.5px;
+}
+.buttonFind{
+  margin-left: -48.5px;
+  margin-top: .5px;
 }
 button img {
   height: 20px;
@@ -50,20 +70,19 @@ button:hover img {
   transition: 0.2s;
 }
 @media (max-width: 620px) {
-  input {
+  .input {
     width: 300px;
     height: 40px;
     font-size: var(--text-imput-mobile);
     border-radius: 30px;
     color: var(--black);
   }
-  button {
+  .button {
     height: 37px;
     width: 37px;
     border-radius: 20px;
-    position: absolute;
-    left: 261px;
     transition: 0.5s;
+    margin-left: -39.5px;
   }
   button:hover img {
     height: 20px;
