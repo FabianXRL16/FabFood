@@ -25,7 +25,6 @@ body {
   font-family: var(--font_primary);
   background-image: url(./assets/img/background-home.jpg);
   background-size: cover;
-  background-repeat: no-repeat;
   background-position-x: center;
   background-repeat: no-repeat;
 background-attachment: fixed;

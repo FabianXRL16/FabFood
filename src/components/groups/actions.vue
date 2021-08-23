@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import buttonSlider from "../inputs/buttonSlider.vue";
+import buttonSlider from "../inputs/buttonArrow.vue";
 
 export default {
   name: "actions",
