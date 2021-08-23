@@ -1,8 +1,8 @@
 <template>
-  <div class="logo">
+  <router-link to="/" class="logo">
     <img class="img" src="../../assets/img/logo_v2.png" alt="" />
     Fab<strong>Food</strong>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -20,6 +20,7 @@ export default {
     align-items: center;
     color: var(--white);
     font-size: var(--text-primary);
+    text-decoration: none;
 }
 
 .img{
