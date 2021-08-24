@@ -41,6 +41,7 @@ export default {
 
 .ffheader {
   padding: var(--p-main);
+  z-index: 9;
   height: 70px;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
