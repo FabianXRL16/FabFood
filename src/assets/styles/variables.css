@@ -32,7 +32,9 @@
     --btn-text-primary: 16px;
 
   /* PADDING */
-  --p-main: 0 100px 0;
-  --p-main-mobile: 0 20px 0;
+  --p:100px;
+  --p-main: 0 var(--p) 0;
+  --p-mobile: 20px;
+  --p-main-mobile: 0 var(--p-mobile) 0;
 }
 
