@@ -1,9 +1,9 @@
 <template>
-  <div class="back__container">
+  <div class="back__container" @click="back">
     <button-arrow :typeBtn="typeBtn">
       <template>
         <img src="../../assets/img/arrowLeft.png" alt="Back Page" />
-        <strong>
+        <strong class="label">
           Back
         </strong>
       </template>
@@ -28,6 +28,11 @@ export default {
       typeBtn: false,
     };
   },
+  methods:{
+    back() {
+      this.$router.go(-1)
+    },
+  }
 };
 </script>
 

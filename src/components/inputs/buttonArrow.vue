@@ -57,13 +57,15 @@ export default {
   gap: 20px;
 }
 
-strong {
+.label {
+  text-decoration: none;
   font-size: 18px;
   color: var(--white);
 }
 
 @media (max-width: 820px) {
-  strong {
+  .label {
+    text-decoration: none;
     display: none;
   }
   .button_otuline {
