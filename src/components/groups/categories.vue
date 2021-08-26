@@ -50,21 +50,19 @@ export default {
   font-size: 14px;
 }
 .content__category {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 10px;
-  width: 100%;
-  justify-items: center;
+  display: flex;
+  justify-content: space-between;
+  max-height: 200px;
   box-sizing: border-box;
-  padding: 10px 0;
+  overflow-x: auto;
+}
+.content__category::-webkit-scrollbar{
+  width: 0;
+  
 }
 @media (max-width: 820px) {
   .categories {
     padding: var(--p-main-mobile);
-  }
-  .content__category {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    width: 720px;
   }
   .title {
     font-size: 12px;

@@ -14,31 +14,23 @@ export default {
 <style scoped>
 @import "../../assets/styles/variables.css";
 .category{
-    height: 100.8px;    
-    width: 100.8px;
+    min-width: 80px;    
+    height: 100.8px;
     border-radius: 50px;
     display: grid;
     grid-auto-flow: row;
-    transform: scale(1);
+    gap: 10px;
+    transform: scale(.9);
     transition: .3s;
     border: none;
     background-color: transparent;
     cursor: pointer;
+    outline: none;
 }
 .category:hover{
     content: "";
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: .3s;
-    position: relative;
-}
-.category:hover::before{
-    content: "";
-    position: absolute;
-    width: 100.8px;
-    height: 10px;
-    border-radius: 100%;
-    bottom: -10px;
-    background-color: red;
 }
 .category img{
     height: 70px;
@@ -46,10 +38,15 @@ export default {
 }
 .category h3{
     color: var(--white);
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
     margin: 0;
 }
+  @media (max-width: 520px){
+    .category{
+      min-width: calc(25vw - 20px);  
+    }
+  }
 @media (max-width: 820px) {
     .category h3{
         font-size: 14px;
