@@ -7,12 +7,7 @@
 <script>
 export default {
   name: "Category",
-  props: {
-    category: {
-      type: Object,
-      default: () => {},
-    },
-  },
+  props: {},
 };
 </script>
 
