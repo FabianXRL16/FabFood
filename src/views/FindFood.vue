@@ -7,11 +7,12 @@
       </div>
     </div>
     <div class="HeaderPage__space"></div>
-    <categories />
+    <categories :categories="categories" />
   </div>
 </template>
 
 <script>
+import data from "../../api/data.json";
 import back from "@/components/general/back.vue";
 import search from "../components/inputs/search.vue";
 import categories from "../components/groups/categories.vue";
@@ -22,6 +23,14 @@ export default {
     return {
       title: "To eat!",
     };
+  },
+  computed: {
+    data() {
+      return data.foods;
+    },
+    categories() {
+      return data.categories;
+    },
   },
 };
 </script>

@@ -8,8 +8,13 @@
         :category="category"
       >
         <template>
-          <img :src="require(`../../assets/img/iconCategories/${category.name.toLowerCase()}.png`)" alt="" />
-          <h3>{{category.name}}</h3>
+          <img
+            :src="
+              require(`../../assets/img/iconCategories/${category.name.toLowerCase()}.png`)
+            "
+            alt=""
+          />
+          <h3>{{ category.name }}</h3>
         </template>
       </category>
     </div>
@@ -18,22 +23,19 @@
 
 <script>
 import category from "../../components/items/category.vue";
-import data from "../../../api/data.json";
 export default {
   name: "Categories",
   components: { category },
+  props: {
+    categories: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {
       title: "Select a category",
     };
-  },
-  computed: {
-    data() {
-      return data.foods;
-    },
-    categories() {
-      return data.categories;
-    },
   },
 };
 </script>
