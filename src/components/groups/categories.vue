@@ -7,10 +7,10 @@
         :key="category.id"
         :category="category"
       >
-      <template>
-        <img src="../../assets/img/drinks.png" alt="">
-        <h3>{{ category.name }}</h3>
-      </template>
+        <template>
+          <img :src="require(`../../assets/img/iconCategories/${category.name.toLowerCase()}.png`)" alt="" />
+          <h3>{{category.name}}</h3>
+        </template>
       </category>
     </div>
   </div>
@@ -18,21 +18,22 @@
 
 <script>
 import category from "../../components/items/category.vue";
+import data from "../../../api/data.json";
 export default {
   name: "Categories",
   components: { category },
   data() {
     return {
       title: "Select a category",
-      categories: [
-        { id: 1, name: "Breakfast", img: "../../assets/img/breakfast.png" },
-        { id: 2, name: "Drinks", img: "../../assets/img/drinks.png" },
-        { id: 3, name: "Sweets", img: "../../assets/img/sweets.png" },
-        { id: 4, name: "Wines", img: "../../assets/img/wines.png" },
-        { id: 5, name: "Dinners", img: "../../assets/img/dinners.png" },
-        { id: 6, name: "Lunches", img: "../../assets/img/Lunches.png" },
-      ],
     };
+  },
+  computed: {
+    data() {
+      return data.foods;
+    },
+    categories() {
+      return data.categories;
+    },
   },
 };
 </script>
@@ -59,12 +60,12 @@ export default {
   .categories {
     padding: var(--p-main-mobile);
   }
-  .content__category{
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  width: 720px;
+  .content__category {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    width: 720px;
   }
   .title {
-  font-size: 12px;
-}
+    font-size: 12px;
+  }
 }
 </style>
