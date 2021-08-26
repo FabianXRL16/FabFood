@@ -7,33 +7,27 @@
     "categories":[
         {
             "id":1,
-            "name":"Breakfast",
-            "icon":"../src/assets/img/breakfast.png"
+            "name":"Breakfast"
         },
         {
             "id":2,
-            "name":"Drinks",
-            "icon":"../src/assets/img/drinks.png"
+            "name":"Drinks"
         },
         {
             "id":3,
-            "name":"Sweets",
-            "icon":"../src/assets/img/sweets.png"
+            "name":"Sweets"
         },
         {
             "id":4,
-            "name":"Wines",
-            "icon":"../src/assets/img/wines.png"
+            "name":"Wines"
         },
         {
             "id":5,
-            "name":"Dinners",
-            "icon":"../src/assets/img/dinners.png"
+            "name":"Dinners"
         },
         {
             "id":6,
-            "name":"Lunches",
-            "icon":"../src/assets/img/lunches.png"
+            "name":"Lunches"
         }
     ],
     "foods":[
