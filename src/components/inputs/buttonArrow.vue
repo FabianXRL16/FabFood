@@ -1,5 +1,5 @@
 <template>
-  <button :class="typeBtn ? 'button' : 'button_otuline'">
+  <button :class="typeBtn ? 'button' : 'button_otuline'"  @click="back">
     <slot />
   </button>
 </template>
@@ -13,6 +13,11 @@ export default {
       default: true,
     },
   },
+  methods:{
+    back() {
+      this.$router.go(-1)
+    },
+  }
 };
 </script>
 
