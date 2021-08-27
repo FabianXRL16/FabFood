@@ -52,7 +52,7 @@ export default {
 .content__category {
   display: flex;
   justify-content: space-between;
-  max-height: 200px;
+  height: 120px;
   box-sizing: border-box;
   overflow-x: auto;
 }
