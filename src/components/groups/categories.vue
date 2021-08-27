@@ -60,6 +60,9 @@ export default {
   width: 0;
   
 }
+h3{
+  margin-top: 0;
+}
 @media (max-width: 820px) {
   .categories {
     padding: var(--p-main-mobile);

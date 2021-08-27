@@ -27,11 +27,6 @@ export default {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 820px) {
-  .foods {
-    padding-bottom: var(--p-mobile);
-  }
-}
 @media (max-width: 520px) {
   .foods {
     margin-bottom: calc(var(--p-mobile)/2);

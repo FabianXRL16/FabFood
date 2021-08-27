@@ -35,7 +35,7 @@ export default {
 @import "../../assets/styles/variables.css";
 .back__container {
   padding: var(--p-main);
-  margin: 20px 0;
+  margin: 0;
   display: grid;
   grid-template-columns: 100px 1fr 100px;
 }
@@ -51,7 +51,6 @@ export default {
 }
 @media (max-width: 820px) {
   .back__container {
-    margin: 10px 0;
     padding: var(--p-main-mobile);
   }
 }
