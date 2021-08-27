@@ -29,7 +29,7 @@ export default {
 }
 .category:hover{
     content: "";
-    transform: scale(1.1);
+    transform: scale(1.04);
     transition: .3s;
 }
 .category img{
