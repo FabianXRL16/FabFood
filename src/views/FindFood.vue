@@ -8,6 +8,7 @@
     </div>
     <div class="HeaderPage__space"></div>
     <categories :categories="categories" />
+    <foods class="foods" />
   </div>
 </template>
 
@@ -16,9 +17,10 @@ import data from "../../api/data.json";
 import back from "@/components/general/back.vue";
 import search from "../components/inputs/search.vue";
 import categories from "../components/groups/categories.vue";
+import foods from "../components/groups/foods.vue"
 export default {
   name: "FindFood",
-  components: { back, search, categories },
+  components: { back, search, categories, foods},
   data() {
     return {
       title: "To eat!",
@@ -56,8 +58,11 @@ export default {
   align-items: center;
   box-sizing: border-box;
 }
+.foods{
+  padding: var(--p-main);
+}
 @media (max-width: 820px) {
-  .searchFindFood {
+  .searchFindFood, .foods {
     padding: var(--p-main-mobile);
   }
 }
