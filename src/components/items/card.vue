@@ -105,6 +105,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
 }
 .mainData .mainData__title .title {
   margin: 0;
@@ -149,9 +150,26 @@ export default {
   .card {
     height: 200px;
   }
+  .price{
+    font-size: 14px;
+    padding: 3px;
+  }
+  .mainData__title{
+    margin-bottom: 5px;
+  }
   .countSymbol {
     width: 90px;
     font-size: 11px;
+  }
+  .description p{
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+  .mainData .mainData__title .title{
+    font-size: 18px;
+  }
+  .fa-star, .gray{
+    font-size: 12px;
   }
 }
 </style>
