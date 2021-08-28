@@ -1,5 +1,5 @@
 <template>
-  <button class="category">
+  <button class="category" @click="filterCategory(id)">
     <slot />
   </button>
 </template>
@@ -7,7 +7,15 @@
 <script>
 export default {
   name: "Category",
-  props: {},
+  props: {id:{
+    type: Number,
+    default: 1
+  }},
+  methods:{
+    filterCategory(id){
+      this.$emit('filterFoods',id)
+    }
+  }
 };
 </script>
 

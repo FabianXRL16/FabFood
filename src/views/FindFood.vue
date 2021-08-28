@@ -8,8 +8,8 @@
     </div>
     <div class="headerPage__space"></div>
     <div class="foods__space">
-      <categories :categories="categories" />
-      <foods class="foods" />
+      <categories :categories="categories" @filterFood="toShowFood" />
+      <foods class="foods" :id="category" />
     </div>
   </div>
 </template>
@@ -26,6 +26,7 @@ export default {
   data() {
     return {
       title: "To eat!",
+      category: 1
     };
   },
   computed: {
@@ -36,6 +37,11 @@ export default {
       return data.categories;
     },
   },
+  methods:{
+    toShowFood(id){
+      this.category = id
+    }
+  }
 };
 </script>
 

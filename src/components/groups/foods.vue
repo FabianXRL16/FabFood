@@ -8,8 +8,18 @@
 import card from "../items/card.vue";
 export default {
   name: "Foods",
+  props: {
+    id:{
+      type: Number,
+      default: 1
+    }
+  },
   components: { card },
-  props: {},
+  data() {
+    return {
+      category: 1,
+    };
+  },
 };
 </script>
 
@@ -28,7 +38,7 @@ export default {
 }
 @media (max-width: 520px) {
   .foods {
-    margin-bottom: calc(var(--p-mobile)/2);
+    margin-bottom: calc(var(--p-mobile) / 2);
     grid-template-columns: 1fr;
   }
 }

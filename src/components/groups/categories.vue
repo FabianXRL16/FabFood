@@ -5,7 +5,8 @@
       <category
         v-for="category in categories"
         :key="category.id"
-        :category="category"
+        :id="category.id"
+        @filterFoods="filter"
       >
         <template>
           <img
@@ -37,6 +38,11 @@ export default {
       title: "Select a category",
     };
   },
+  methods:{
+    filter(id){
+      this.$emit("filterFood",id)
+    }
+  }
 };
 </script>
 
