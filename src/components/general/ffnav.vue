@@ -15,6 +15,7 @@
 <script>
 export default {
   name: "Nav",
+  props:{},
   data() {
     return {
       title: "Confirm order",
@@ -30,9 +31,6 @@ export default {
 
 <style scoped>
 @import "../../assets/styles/variables.css";
-.text {
-  color: red;
-}
 .ffheader__list {
   height: 70px;
   display: flex;

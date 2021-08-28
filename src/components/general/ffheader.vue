@@ -4,7 +4,7 @@
     <div class="navbar">
       <ffnav class="nav" />
       <orderActions class="order" />
-      <buttonMenu class="menu" />
+      <buttonMenu @upMenu="up" class="menu" />
     </div>
   </div>
 </template>
@@ -33,6 +33,11 @@ export default {
       console.log(val);
     },
   },
+  methods:{
+    up(){
+      this.$emit("menuUp")
+    }
+  }
 };
 </script>
 

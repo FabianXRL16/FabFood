@@ -1,19 +1,31 @@
 <template>
   <div id="app">
-    <ffheader class="header" />
+    <ffheader @menuUp="up" class="header" />
     <div class="space"></div>
     <router-view class="content" />
+    <upMenu @closeUp="up" v-if="ok" class="menu__up" />
   </div>
 </template>
 
 <script>
 import ffheader from "./components/general/ffheader.vue";
+import upMenu from "./components/general/upMenu.vue";
 
 export default {
   name: "App",
   components: {
-    ffheader,
+    ffheader, upMenu
   },
+  data(){
+    return{
+      ok: true
+    }
+  },
+  methods:{
+    up(){
+      this.ok = !this.ok
+    }
+  }
 };
 </script>
 
@@ -30,6 +42,9 @@ body {
 background-attachment: fixed;
   height: 100vh;
 }
+#app{
+  position: relative;
+}
 .header {
   position: fixed;
   width: 100%;
@@ -40,6 +55,12 @@ background-attachment: fixed;
 }
 .content {
   height: calc(100vh - 70px);
+}
+.menu__up{
+  position: absolute;
+  top: 0;
+  color: wheat;
+  z-index: 12;
 }
 
 @media (max-width: 500px) {
