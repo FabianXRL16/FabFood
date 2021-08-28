@@ -8,7 +8,8 @@
         <h2 class="title">Name Food</h2>
         <div class="count">
           <div>
-            <i class="far fa-star" v-for="n in 5" :key="n"></i>
+            <i class="far fa-star" v-for="n in score" :key="n"></i>
+            <i class="far fa-star gray" v-for="m in (5-score)" :key="m*10"></i>
           </div>
           <div>
             <button class="countSymbol">Order now</button>
@@ -28,6 +29,7 @@ export default {
     return {
       url:
         "https://tipsparatuviaje.com/wp-content/uploads/2020/03/desayuno-ingles-completo-1.jpg",
+      score: 2,
     };
   },
 };
@@ -87,6 +89,9 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 12%, rgba(255,255,255,0) 49%, rg
 }
 .fa-star {
   color: var(--bg-yellow);
+}
+.gray{
+  color: var(--gray-ligth);
 }
 .countSymbol{
   outline: none;
