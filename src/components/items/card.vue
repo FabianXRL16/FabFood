@@ -5,7 +5,15 @@
         $12.00
       </div>
       <div class="mainData">
-        Name foods
+        <h2 class="title">Name Food</h2>
+        <div class="count">
+          <div>
+            <i class="far fa-star" v-for="n in 5" :key="n"></i>
+          </div>
+          <div>
+            <button class="countSymbol">Order now</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -32,15 +40,18 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 15px;
+  border-radius: 8px;
   transition: 0.5s;
-  border-bottom: 15px solid var(--bg-primary);
+  border-bottom: 8px solid var(--bg-primary);
 }
-.card:hover {
+.card:hover{
   transition: 0.5s;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .card__container {
+  background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,1) 12%, rgba(255,255,255,0) 49%, rgba(255,255,255,0) 78%, rgba(0,0,0,1) 100%);;
+  border-radius: 8px 8px 0 0;
   height: 100%;
   transition: 0.5s;
   background-color: transparent;
@@ -50,19 +61,43 @@ export default {
   padding: 20px;
   box-sizing: border-box;
 }
-.card__container:hover {
-  transform: scale(1);
+.card__container:hover{
   background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 15px;
+  border-radius: 8px 8px 0 0;
 }
-.price{
+.price {
   margin-left: auto;
-  background-color: var(--bg-primary);
+  background-color: var(--gray-dark);
+  font-family: var(--font_primary);
   width: 80px;
   padding: 5px;
   text-align: center;
   border-radius: 40px;
   color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.mainData .title {
+  margin: 0;
+  color: var(--white);
+  font-family: var(--font_primary);
+}
+.mainData .count {
+  display: flex;
+  justify-content: space-between;
+}
+.fa-star {
+  color: var(--bg-yellow);
+}
+.countSymbol{
+  outline: none;
+  border: none;
+  width: 120px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: var(--bg-primary);
+  cursor: pointer;
+  color: var(--white);
+  font-family: var(--font_primary);
 }
 @media (max-width: 820px) {
   .card {
