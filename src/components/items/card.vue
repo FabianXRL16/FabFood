@@ -149,5 +149,9 @@ export default {
   .card {
     height: 200px;
   }
+  .countSymbol {
+    width: 90px;
+    font-size: 11px;
+  }
 }
 </style>
