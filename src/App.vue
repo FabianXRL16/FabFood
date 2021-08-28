@@ -14,18 +14,19 @@ import upMenu from "./components/general/upMenu.vue";
 export default {
   name: "App",
   components: {
-    ffheader, upMenu
+    ffheader,
+    upMenu,
   },
-  data(){
-    return{
-      ok: true
-    }
+  data() {
+    return {
+      ok: true,
+    };
   },
-  methods:{
-    up(){
-      this.ok = !this.ok
-    }
-  }
+  methods: {
+    up() {
+      this.ok = !this.ok;
+    },
+  },
 };
 </script>
 
@@ -39,10 +40,10 @@ body {
   background-size: cover;
   background-position-x: center;
   background-repeat: no-repeat;
-background-attachment: fixed;
+  background-attachment: fixed;
   height: 100vh;
 }
-#app{
+#app {
   position: relative;
 }
 .header {
@@ -56,7 +57,7 @@ background-attachment: fixed;
 .content {
   height: calc(100vh - 70px);
 }
-.menu__up{
+.menu__up {
   position: absolute;
   top: 0;
   color: wheat;
