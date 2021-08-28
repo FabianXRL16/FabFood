@@ -1,19 +1,35 @@
 <template>
   <div class="card" :style="`background-image: url(${url});`">
-    <div class="card__container">
+    <div :class="ok ? 'card__container focus' : 'card__container'">
       <div class="price">
         $12.00
       </div>
       <div class="mainData">
-        <h2 class="title">Name Food</h2>
+        <div class="mainData__title">
+          <h2 class="title">Name Food</h2>
+          <button class="button" @click="ok = !ok">
+            <i v-if="ok" class="fas fa-chevron-up arrow"></i>
+            <i v-else class="fas fa-chevron-down arrow"></i>
+          </button>
+        </div>
         <div class="count">
           <div>
             <i class="far fa-star" v-for="n in score" :key="n"></i>
-            <i class="far fa-star gray" v-for="m in (5-score)" :key="m*10"></i>
+            <i
+              class="far fa-star gray"
+              v-for="m in 5 - score"
+              :key="m * 10"
+            ></i>
           </div>
           <div>
             <button class="countSymbol">Order now</button>
           </div>
+        </div>
+        <div class="description" v-if="ok">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+            inventore assumenda illo.
+          </p>
         </div>
       </div>
     </div>
@@ -30,6 +46,7 @@ export default {
       url:
         "https://tipsparatuviaje.com/wp-content/uploads/2020/03/desayuno-ingles-completo-1.jpg",
       score: 2,
+      ok: false,
     };
   },
 };
@@ -46,13 +63,19 @@ export default {
   transition: 0.5s;
   border-bottom: 8px solid var(--bg-primary);
 }
-.card:hover{
+.card:hover {
   transition: 0.5s;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .card__container {
-  background: rgb(0,0,0);
-background: linear-gradient(0deg, rgba(0,0,0,1) 12%, rgba(255,255,255,0) 49%, rgba(255,255,255,0) 78%, rgba(0,0,0,1) 100%);;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 12%,
+    rgba(255, 255, 255, 0) 49%,
+    rgba(255, 255, 255, 0) 78%,
+    rgba(0, 0, 0, 1) 100%
+  );
   border-radius: 8px 8px 0 0;
   height: 100%;
   transition: 0.5s;
@@ -63,7 +86,7 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 12%, rgba(255,255,255,0) 49%, rg
   padding: 20px;
   box-sizing: border-box;
 }
-.card__container:hover{
+.card__container:hover, .focus{
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 8px 8px 0 0;
 }
@@ -78,22 +101,40 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 12%, rgba(255,255,255,0) 49%, rg
   color: var(--white);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
-.mainData .title {
+.mainData__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainData .mainData__title .title {
   margin: 0;
   color: var(--white);
   font-family: var(--font_primary);
+}
+.mainData .mainData__title .button {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.mainData .mainData__title .button .arrow {
+  color: var(--white);
 }
 .mainData .count {
   display: flex;
   justify-content: space-between;
 }
+.description{
+  color: var(--gray-ligth);
+  font-family: var(--font_primary);
+}
 .fa-star {
   color: var(--bg-yellow);
 }
-.gray{
+.gray {
   color: var(--gray-ligth);
 }
-.countSymbol{
+.countSymbol {
   outline: none;
   border: none;
   width: 120px;
