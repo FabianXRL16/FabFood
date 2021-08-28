@@ -8,33 +8,34 @@
   src: url(../fonts/Poppins-ExtraLight.ttf);
 }
 
-:root{
+:root {
   /* COLORS */
-    --bg-primary: #F20746;
-    --white: #fff;
-    --black: #1A1A1A;
-    --gray-ligth: #a7a7a7;
+  --bg-primary: #f20746;
+  --white: #fff;
+  --black: #1a1a1a;
+  --gray-ligth: #a7a7a7;
+  --gray-dark: #4D4D4D;
+  --bg-yellow: #FAC20B;
 
   /* FONTS */
-    --font_primary: poppinsRegular;
-    --font_secondary: poppinsLight;
+  --font_primary: poppinsRegular;
+  --font_secondary: poppinsLight;
 
   /* FONT SIZEs */
-   --text-title-1: 50px;
-   --text-title-2: 32px;
+  --text-title-1: 50px;
+  --text-title-2: 32px;
 
-   --text-primary: 30px;
-   --text-secondary: 16px;
-   
-   --text-imput: 24px;
-   --text-imput-mobile: 16px;
+  --text-primary: 30px;
+  --text-secondary: 16px;
 
-    --btn-text-primary: 16px;
+  --text-imput: 24px;
+  --text-imput-mobile: 16px;
+
+  --btn-text-primary: 16px;
 
   /* PADDING */
-  --p:100px;
+  --p: 100px;
   --p-main: 0 var(--p) 0;
   --p-mobile: 20px;
   --p-main-mobile: 0 var(--p-mobile) 0;
 }
-
