@@ -1,21 +1,16 @@
 <template>
   <div class="ffheader__list">
-    <router-link class="router" 
-      v-for="item in list" :key="item.id" 
-      :to="item.ref">
-      {{item.subtitle}}
-    </router-link>
-    <!--<ul>
-      <li v-for="item in list" :key="item.id">
-        <a :href="item.ref">{{ item.subtitle }}</a>
-      </li>
-    </ul>-->
+    <button v-for="item in list" :key="item.id" @click="closed">
+      <router-link class="router" :to="item.ref">
+        {{ item.subtitle }}
+      </router-link>
+    </button>
   </div>
 </template>
 <script>
 export default {
   name: "Nav",
-  props:{},
+  props: {},
   data() {
     return {
       title: "Confirm order",
@@ -26,6 +21,11 @@ export default {
       ],
     };
   },
+  methods:{
+      closed(){
+          this.$emit("closed")
+      }
+  }
 };
 </script>
 
@@ -34,6 +34,18 @@ export default {
 .ffheader__list {
   height: 70px;
   display: flex;
+}
+button{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transform: scale(1);
+    transition: .4s;
+}
+button:hover{
+    transform: scale(1.2);
+    transition: .4s;
+
 }
 .router {
   font-size: var(--text-secondary);

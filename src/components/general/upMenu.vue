@@ -7,7 +7,7 @@
         </button>
       </div>
       <div class="contentMenu">
-          <ffnav :up="true" class="nav" />
+          <ffnav :up="true" class="nav" @closed="closeMenu" />
           <orderActions class="order" />
       </div>
     </div>

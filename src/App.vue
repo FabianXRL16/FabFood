@@ -19,7 +19,7 @@ export default {
   },
   data() {
     return {
-      ok: true,
+      ok: false,
     };
   },
   methods: {
