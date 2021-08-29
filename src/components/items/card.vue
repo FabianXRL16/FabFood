@@ -1,12 +1,16 @@
 <template>
-  <div class="card" :style="`background-image: url(${url});`">
+  <div class="card" :style="`background-image: url(${food.img});`">
     <div :class="ok ? 'card__container focus' : 'card__container'">
-      <div class="price">
-        $12.00
+      <div v-if="food.offer" class="offer price">
+        <span class="del"
+          >Before <del>${{ food.price }}</del></span
+        >
+        | <strong>${{ food.newPrice }}</strong>
       </div>
+      <div v-else class="normal price">${{ food.price }}</div>
       <div class="mainData">
         <div class="mainData__title">
-          <h2 class="title">Name Food</h2>
+          <h2 class="title">{{ food.id }}</h2>
           <button class="button" @click="ok = !ok">
             <i v-if="ok" class="fas fa-chevron-up arrow"></i>
             <i v-else class="fas fa-chevron-down arrow"></i>
@@ -14,10 +18,10 @@
         </div>
         <div class="count">
           <div>
-            <i class="far fa-star" v-for="n in score" :key="n"></i>
+            <i class="far fa-star" v-for="n in food.score" :key="n"></i>
             <i
               class="far fa-star gray"
-              v-for="m in 5 - score"
+              v-for="m in 5 - food.score"
               :key="m * 10"
             ></i>
           </div>
@@ -27,8 +31,7 @@
         </div>
         <div class="description" v-if="ok">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
-            inventore assumenda illo.
+            {{food.description}}
           </p>
         </div>
       </div>
@@ -39,13 +42,15 @@
 <script>
 export default {
   name: "card",
-  props: {},
+  props: {
+    food: {
+      type: Object,
+      default: () => {},
+    },
+  },
   components: {},
   data() {
     return {
-      url:
-        "https://tipsparatuviaje.com/wp-content/uploads/2020/03/desayuno-ingles-completo-1.jpg",
-      score: 2,
       ok: false,
     };
   },
@@ -86,20 +91,33 @@ export default {
   padding: 20px;
   box-sizing: border-box;
 }
-.card__container:hover, .focus{
+.card__container:hover,
+.focus {
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 8px 8px 0 0;
 }
 .price {
   margin-left: auto;
-  background-color: var(--gray-dark);
   font-family: var(--font_primary);
-  width: 80px;
-  padding: 5px;
-  text-align: center;
+  min-width: 50px;
+  padding: 5px 20px;
   border-radius: 40px;
   color: var(--white);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.offer {
+  background-color: var(--bg-yellow);
+}
+.normal {
+  background-color: var(--gray-dark);
+}
+.del {
+  font-size: 12px;
+  color: var(--gray-dark);
 }
 .mainData__title {
   display: flex;
@@ -124,8 +142,9 @@ export default {
 .mainData .count {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-.description{
+.description {
   color: var(--gray-ligth);
   font-family: var(--font_primary);
 }
@@ -150,25 +169,29 @@ export default {
   .card {
     height: 200px;
   }
-  .price{
-    font-size: 14px;
-    padding: 3px;
+  .price {
+    font-size: 13px;
+    min-width: 30px;
   }
-  .mainData__title{
+  .del {
+    font-size: 10px;
+  }
+  .mainData__title {
     margin-bottom: 5px;
   }
   .countSymbol {
     width: 90px;
     font-size: 11px;
   }
-  .description p{
+  .description p {
     font-size: 12px;
     margin-bottom: 0;
   }
-  .mainData .mainData__title .title{
+  .mainData .mainData__title .title {
     font-size: 18px;
   }
-  .fa-star, .gray{
+  .fa-star,
+  .gray {
     font-size: 12px;
   }
 }

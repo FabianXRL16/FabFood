@@ -1,6 +1,6 @@
 <template>
   <div class="foods">
-    <card v-for="n in 6" :key="n" />
+    <card v-for="food in foods[id]" :key="food.id" :food='food' />
   </div>
 </template>
 
@@ -11,7 +11,11 @@ export default {
   props: {
     id:{
       type: Number,
-      default: 1
+      default: 0
+    },
+    foods:{
+      type: Array,
+      default: () => []
     }
   },
   components: { card },

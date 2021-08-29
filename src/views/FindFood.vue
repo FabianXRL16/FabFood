@@ -9,33 +9,31 @@
     <div class="headerPage__space"></div>
     <div class="foods__space">
       <categories :categories="categories" @filterFood="toShowFood" />
-      <foods class="foods" :id="category" />
+      <foods class="foods" :foods="foods" :id="category" />
     </div>
   </div>
 </template>
 
 <script>
-import data from "../../api/data.json";
+import { mapState } from "vuex";
+
 import back from "@/components/general/back.vue";
 import search from "../components/inputs/search.vue";
 import categories from "../components/groups/categories.vue";
 import foods from "../components/groups/foods.vue";
+
 export default {
   name: "FindFood",
   components: { back, search, categories, foods },
   data() {
     return {
       title: "To eat!",
-      category: 1
+      category: 0
     };
   },
   computed: {
-    data() {
-      return data.foods;
-    },
-    categories() {
-      return data.categories;
-    },
+    ...mapState('categories',['categories']),
+    ...mapState('foods',['foods'])
   },
   methods:{
     toShowFood(id){
