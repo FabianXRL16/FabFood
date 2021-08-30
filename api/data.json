@@ -6,32 +6,31 @@
     },
     "categories":[
         {
-            "id":0,
+            "id":1,
             "name":"Breakfast"
         },
         {
-            "id":1,
+            "id":2,
             "name":"Drinks"
         },
         {
-            "id":2,
+            "id":3,
             "name":"Sweets"
         },
         {
-            "id":3,
+            "id":4,
             "name":"Wines"
         },
         {
-            "id":4,
+            "id":5,
             "name":"Dinners"
         },
         {
-            "id":5,
+            "id":6,
             "name":"Lunches"
         }
     ],
     "foods":[
-        [
             {
                 "id":"breakfast_1",
                 "name":"...",
@@ -99,8 +98,7 @@
                 "preparationTime":20,
                 "offer":false
             }
-        ],
-        [
+        ,
             {
                 "id":"drinks_1",
                 "name":"...",
@@ -167,8 +165,7 @@
                 "preparationTime":20,
                 "offer":false
             }
-        ],
-        [
+        ,
             {
                 "id":"sweets_1",
                 "name":"...",
@@ -237,8 +234,7 @@
                 "preparationTime":20,
                 "offer":false
             }
-        ],
-        [
+        ,
             {
                 "id":"wines_1",
                 "name":"...",
@@ -307,8 +303,7 @@
                 "offer":true,
                 "newPrice":200
             }
-        ],
-        [
+        ,
             {
                 "id":"dinners_1",
                 "name":"...",
@@ -377,8 +372,7 @@
                 "preparationTime":20,
                 "offer":false
             }
-        ],
-        [
+        ,
             {
                 "id":"lunches_1",
                 "name":"...",
@@ -445,6 +439,6 @@
                 "preparationTime":20,
                 "offer":false
             }
-        ]
+        
     ]
 }
