@@ -6,7 +6,7 @@
         v-for="category in categories"
         :key="category.id"
         :id="category.id"
-        @filterFoods="filter"
+        @filterFoods="filter(category.id)"
       >
         <template>
           <img

@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       title: "To eat!",
-      category: 0,
+      category: 1,
     };
   },
   computed: {
