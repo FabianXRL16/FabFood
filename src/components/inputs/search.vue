@@ -6,7 +6,7 @@
       placeholder="Buscar ..."
     />
     <button :class="find ? 'buttonFind' : 'button'">
-      <img src="../../assets/img/search.svg" alt="" />
+      <i class="fas fa-search"></i>
     </button>
   </div>
 </template>
@@ -52,22 +52,17 @@ button {
   height: 45px;
   width: 45px;
   border-radius: 25px;
-  transition: 0.2s;
+  transition: .2s;
   cursor: pointer;
-}
-.button {
   margin-left: -47.5px;
 }
 .buttonFind{
   margin-left: -48.5px;
   margin-top: .5px;
 }
-button img {
-  height: 20px;
-}
-button:hover img {
-  height: 25px;
-  transition: 0.2s;
+button i {
+  font-size: 25px;
+  color: var(--white);
 }
 @media (max-width: 620px) {
   .input {
@@ -84,8 +79,8 @@ button:hover img {
     transition: 0.5s;
     margin-left: -39.5px;
   }
-  button:hover img {
-    height: 20px;
+  button i{
+    font-size: 23px;
   }
 }
 </style>
