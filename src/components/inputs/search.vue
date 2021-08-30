@@ -4,8 +4,9 @@
       :class="find ? 'inputFind' : 'input'"
       type="text"
       placeholder="Buscar ..."
+      v-model="filter"
     />
-    <button :class="find ? 'buttonFind' : 'button'">
+    <button :class="find ? 'buttonFind' : 'button'" @click="filterFood">
       <i class="fas fa-search"></i>
     </button>
   </div>
@@ -20,6 +21,16 @@ export default {
       default: false,
     },
   },
+  data(){
+    return {
+      filter : ""
+    }
+  },
+  methods:{
+    filterFood(){
+      this.$emit("filter", this.filter)
+    }
+  }
 };
 </script>
 

@@ -3,7 +3,7 @@
     <div class="headerPage">
       <back :title="title" />
       <div class="searchFindFood">
-        <search :find="true" />
+        <search :find="true" @filter="findFoodFilter" />
       </div>
     </div>
     <div class="headerPage__space"></div>
@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       title: "To eat!",
-      category: 0
+      category: 0,
     };
   },
   computed: {
@@ -38,6 +38,17 @@ export default {
   methods:{
     toShowFood(id){
       this.category = id
+    },
+    findFoodFilter(filter){
+      if (!filter){
+        return this.foods[this.category]
+      }
+      return this.foods.filter(
+        food => {
+          food.filter(
+            a => a.id.toLowerCase().includes(filter.toLowerCase())
+          )
+        })
     }
   }
 };
