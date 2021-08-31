@@ -3,13 +3,13 @@
     <div class="headerPage">
       <back :title="title" />
       <div class="searchFindFood">
-        <search :find="true" @filter="findFoodFilter" />
+        <search :find="true" @filter="onFoodFilter" />
       </div>
     </div>
     <div class="headerPage__space"></div>
     <div class="foods__space">
       <categories :categories="categories" @filterFood="toShowFood" />
-      <foods class="foods" :foods="foods" :id="category" />
+      <foods class="foods" :foods="data" />
     </div>
   </div>
 </template>
@@ -29,28 +29,33 @@ export default {
     return {
       title: "To eat!",
       category: 1,
+      data: []
     };
   },
-  computed: {
-    ...mapState('categories',['categories']),
-    ...mapState('foods',['foods'])
+  created(){
+    this.onFoodFilter()
   },
-  methods:{
-    toShowFood(id){
-      this.category = id
+  computed: {
+    ...mapState("categories", ["categories"]),
+    ...mapState("foods", ["foods"]),
+  },
+  methods: {
+    toShowFood(id) {
+      this.category = id;
+      this.onFoodFilter()
     },
-    findFoodFilter(filter){
-      if (!filter){
-        return this.foods[this.category]
+    findFoodFilter(filter) {
+      if (!filter) {
+        return this.foods.filter(a => a.category === this.category);
       }
-      return this.foods.filter(
-        food => {
-          food.filter(
-            a => a.id.toLowerCase().includes(filter.toLowerCase())
-          )
-        })
+      return this.foods.filter(a =>
+        a.id.toLowerCase().includes(filter.toLowerCase())
+      );
+    },
+    onFoodFilter(filter){
+      this.data = this.findFoodFilter(filter)
     }
-  }
+  },
 };
 </script>
 
@@ -73,13 +78,13 @@ export default {
   align-items: center;
   box-sizing: border-box;
 }
-.foods__space{
+.foods__space {
   max-height: calc(100vh - 178px - 70px);
   overflow-x: auto;
   box-sizing: border-box;
   padding-bottom: 20px;
 }
-.foods__space::-webkit-scrollbar{
+.foods__space::-webkit-scrollbar {
   width: 0;
 }
 .foods {

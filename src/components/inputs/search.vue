@@ -3,7 +3,7 @@
     <input
       :class="find ? 'inputFind' : 'input'"
       type="text"
-      placeholder="Buscar ..."
+      :placeholder='!seudoFilter?"Search...":`You searched ${seudoFilter}`'
       v-model="filter"
     />
     <button :class="find ? 'buttonFind' : 'button'" @click="filterFood">
@@ -23,12 +23,15 @@ export default {
   },
   data(){
     return {
-      filter : ""
+      filter : "",
+      seudoFilter:""
     }
   },
   methods:{
     filterFood(){
       this.$emit("filter", this.filter)
+      this.seudoFilter = this.filter
+      this.filter = ""
     }
   }
 };

@@ -1,6 +1,6 @@
 <template>
   <div class="foods">
-    <card v-for="food in data" :key="food.id" :food='food' />
+    <card v-for="food in foods" :key="food.id" :food='food' />
   </div>
 </template>
 
@@ -9,10 +9,6 @@ import card from "../items/card.vue";
 export default {
   name: "Foods",
   props: {
-    id:{
-      type: Number,
-      default: 1
-    },
     foods:{
       type: Array,
       default: () => []
@@ -22,13 +18,6 @@ export default {
   data() {
     return {
     };
-  },
-  computed:{
-    data(){
-      return this.foods.filter(
-        a => a.category === this.id
-      )
-    }
   }
 };
 </script>
