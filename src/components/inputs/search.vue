@@ -5,6 +5,7 @@
       type="text"
       :placeholder='!seudoFilter?"Search...":`You searched ${seudoFilter}`'
       v-model="filter"
+      @keyup.enter="filterFood"
     />
     <button :class="find ? 'buttonFind' : 'button'" @click="filterFood">
       <i class="fas fa-search"></i>
