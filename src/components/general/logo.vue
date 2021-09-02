@@ -1,6 +1,6 @@
 <template>
   <router-link to="/" class="logo">
-    <img class="img" src="../../assets/img/logo_v2.png" alt="" />
+    <img class="img" src="../../assets/img/logo.svg" alt="" />
     Fab<strong>Food</strong>
   </router-link>
 </template>
@@ -24,7 +24,7 @@ export default {
 }
 
 .img{
-    height: 50px;
+    height: 55px;
     margin-right: 10px;
 }
 
