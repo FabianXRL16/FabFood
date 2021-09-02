@@ -24,7 +24,6 @@ export default {
   box-sizing: border-box;
   width: 100%;
   height: calc(100vh - 70px);
-  background: rgb(0, 0, 0);
   display: grid;
   place-content: center;
   text-align: center;
