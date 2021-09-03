@@ -29,7 +29,7 @@ export default {
   text-align: center;
 }
 .msg {
-  color: var(--white);
+  color: var(--gray-ligth);
   font-family: var(--font_primary);
 }
 .logo {
