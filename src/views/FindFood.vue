@@ -10,6 +10,9 @@
     <div class="foods__space">
       <categories :categories="categories" @filterFood="toShowFood" />
       <foods class="foods" :foods="data" />
+      <div v-if="data.length == 0" class="noResultsFound">
+        <i class="far fa-frown"></i><h1>No results found</h1>
+      </div>
     </div>
   </div>
 </template>
@@ -87,13 +90,28 @@ export default {
 .foods__space::-webkit-scrollbar {
   width: 0;
 }
-.foods {
+.foods, .noResultsFound {
   padding: var(--p-main);
+}
+.noResultsFound{
+  margin-top: 80px;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  gap: 20px;
+  color: var(--gray-ligth);
+}
+.noResultsFound h1, .noResultsFound .fa-frown{
+  margin: 0;
+  font-size: 40px;
 }
 @media (max-width: 820px) {
   .searchFindFood,
-  .foods {
+  .foods, .noResultsFound {
     padding: var(--p-main-mobile);
+  }
+  .noResultsFound h1, .noResultsFound .fa-frown{
+    font-size: 30px;
   }
 }
 </style>
