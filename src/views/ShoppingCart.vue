@@ -1,11 +1,7 @@
 <template>
   <div class="container">
-      <order-details>
-          carts
-      </order-details>
-      <payment>
-          payment
-      </payment>
+      <order-details />
+      <payment />
   </div>
 </template>
 
