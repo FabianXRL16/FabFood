@@ -1,10 +1,10 @@
 <template>
-  <button>
+  <router-link to="/shoppingCart" class="button">
     <div class="count">
       <strong>10+</strong>
     </div>
     <img src="../../assets/img/carrito.png" alt="" />
-  </button>
+  </router-link>
 </template>
 
 <script>
@@ -14,11 +14,13 @@ export default {};
 <style scoped>
 @import "../../assets/styles/variables.css";
 
-button {
+.button {
   background-color: transparent;
   border: none;
   position: relative;
   cursor: pointer;
+  display: grid;
+  place-content: center;
 }
 
 .count {
@@ -35,7 +37,7 @@ button {
   font-family: popinsLight;
 }
 
-button img {
+.button img {
   height: 30px;
 }
 </style>
