@@ -8,7 +8,7 @@
       <div class="text">
         <div class="title">
           <h6>Drink</h6>
-          <h3>Title asdasd as das d asd a sd as da sdasdasf</h3>
+          <h3>Title asdasd as das d asd</h3>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. At
             consequuntur odit nam mollitia error excepturi.
@@ -24,7 +24,7 @@
         </div>
         <div class="count">
           <button>-</button>
-          <h3>0</h3>
+          <h3>1</h3>
           <button>+</button>
         </div>
       </div>
@@ -75,15 +75,15 @@ export default {
   outline: none;
   border: none;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
   margin-bottom: auto;
 }
 .text button i {
   color: var(--white);
   font-size: 20px;
 }
-.text button:hover i{
-  transition: .2s;
+.text button:hover i {
+  transition: 0.2s;
   color: var(--gray-ligth);
 }
 .content__price {
@@ -96,7 +96,7 @@ export default {
   font-size: 18px;
 }
 .img {
-  height: 130px;
+  height: 150px;
   width: 20%;
   border-radius: 10px;
   background-position: center;
@@ -124,19 +124,47 @@ export default {
   display: grid;
   place-content: center;
   font-weight: bold;
-  transition: .2s;
+  transition: 0.2s;
 }
 .count button:hover {
   background-color: var(--white);
-  transition: .2s;
+  transition: 0.2s;
   color: var(--bg-primary);
 }
 .count h3 {
   margin: 0;
-  width: 50px;
+  width: 40px;
   text-align: center;
   color: var(--white);
 }
-@media (max-width: 820px) {
+@media (max-width: 1150px){
+  .content__cart{
+    padding: 20px 0 0;
+  }
+}
+@media (max-width: 650px) {
+  .cart{
+    padding: 10px;
+    gap: 10px;
+  }
+  .content__cart{
+    width: 65%;
+  }
+  .img{
+    width: 35%;
+  }
+  .text button i {
+  font-size: 18px;
+}
+  .title p {
+    font-size: 12px;
+    white-space: nowrap;
+    width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+.title h3 {
+ font-size: 15px;
+}
 }
 </style>
