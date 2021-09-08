@@ -84,7 +84,7 @@ export default {
 }
 .text button:hover i{
   transition: .2s;
-  color: var(--bg-primary);
+  color: var(--gray-ligth);
 }
 .content__price {
   display: flex;
