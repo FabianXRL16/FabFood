@@ -1,18 +1,19 @@
 <template>
   <div class="container__orderDetails">
     <titleMain :title="'Shopping Cart'" />
-    <div>
-      items
+    <div class="container__cart">
+      <cart v-for="n in 3" :key="n" />
     </div>
     <div></div>
   </div>
 </template>
 <script>
 import titleMain from "../general/titleMain.vue";
+import cart from "../items/cart.vue";
 export default {
   name: "OrderDetails",
   components: {
-    titleMain,
+    titleMain, cart
   },
 };
 </script>
@@ -20,9 +21,13 @@ export default {
 <style scoped>
 @import "../../assets/styles/variables.css";
 .container__orderDetails {
-  background: blue;
   width: calc(100vw - 2 * var(--p) - 20px - 400px);
   box-sizing: border-box;
+}
+.container__cart{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 @media (max-width: 1150px) {
   .container__orderDetails {
