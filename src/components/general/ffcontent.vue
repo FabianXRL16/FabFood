@@ -29,10 +29,10 @@ export default {
 @import "../../assets/styles/variables.css";
 
 .ffcontent {
-  height: calc(100vh - 70px);
+  height: 100%;
   display: grid;
+  place-items: center;
   grid-template-rows: 1fr 1fr;
-  padding: var(--p-main);
 }
 
 @media (max-width: 820px){

@@ -1,44 +1,24 @@
 <template>
   <div class="container">
-      <order-details />
-      <payment />
+    <order-details />
+    aaaaaa
+    <!--<payment />-->
   </div>
 </template>
 
 <script>
 import orderDetails from "../components/groups/orderDetails.vue";
-import payment from "../components/general/payment.vue";
+//import payment from "../components/general/payment.vue";
 export default {
   name: "ShoppingCart",
-  components: {orderDetails, payment},
-  data(){
-      return{
-
-      }
-  }
+  components: {
+    orderDetails,
+    //payment
+  },
+  data() {
+    return {};
+  },
 };
 </script>
 
-<style scoped>
-.container {
-  padding: var(--p-main);
-  box-sizing: border-box;
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-  /*height: calc(100vh - 70px);
-  overflow-x: auto;*/
-  box-sizing: border-box;
-  position: relative;
-}
-@media (max-width: 1150px){
-    .container{
-        flex-direction: column;
-    }
-}
-@media (max-width: 820px) {
-  .container {
-    padding: var(--p-main-mobile);
-  }
-}
-</style>
+<style scoped></style>

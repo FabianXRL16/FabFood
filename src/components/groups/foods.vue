@@ -25,7 +25,6 @@ export default {
 <style scoped>
 @import "../../assets/styles/variables.css";
 .foods {
-  padding-bottom: 50px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;

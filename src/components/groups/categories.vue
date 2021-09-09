@@ -48,9 +48,6 @@ export default {
 
 <style scoped>
 @import "../../assets/styles/variables.css";
-.categories {
-  padding: var(--p-main);
-}
 .title {
   color: var(--gray-ligth);
   font-size: 14px;
@@ -70,9 +67,6 @@ h3{
   margin-top: 0;
 }
 @media (max-width: 820px) {
-  .categories {
-    padding: var(--p-main-mobile);
-  }
   .title {
     font-size: 12px;
   }

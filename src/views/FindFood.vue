@@ -67,14 +67,14 @@ export default {
 .headerPage {
   width: 100%;
   height: 178px;
-  padding: 20px 0 0;
+  padding-top: 20px;
   box-sizing: border-box;
-}
-.contentFindFood {
-  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 .searchFindFood {
-  padding: var(--p-main);
   height: 70px;
   width: 100%;
   display: grid;
@@ -90,9 +90,6 @@ export default {
 .foods__space::-webkit-scrollbar {
   width: 0;
 }
-.foods, .noResultsFound {
-  padding: var(--p-main);
-}
 .noResultsFound{
   margin-top: 80px;
   display: flex;
@@ -106,12 +103,15 @@ export default {
   font-size: 40px;
 }
 @media (max-width: 820px) {
-  .searchFindFood,
-  .foods, .noResultsFound {
-    padding: var(--p-main-mobile);
-  }
   .noResultsFound h1, .noResultsFound .fa-frown{
     font-size: 30px;
   }
+  
+@media (max-width: 820px) {
+  .headerPage {
+    gap: 15px;
+    padding-top: 0;
+  }
+}
 }
 </style>

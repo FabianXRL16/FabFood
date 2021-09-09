@@ -2,7 +2,7 @@
   <div id="app">
     <ffheader @menuUp="up" class="header" />
     <div class="space"></div>
-    <router-view class="content" />
+    <router-view class="container" />
     <upMenu @closeUp="up" v-if="ok" class="menu__up" />
   </div>
 </template>
@@ -54,16 +54,12 @@ body {
 .space {
   height: 70px;
 }
-.content {
-  height: calc(100vh - 70px);
-}
 .menu__up {
   position: absolute;
   top: 0;
   color: wheat;
   z-index: 12;
 }
-
 @media (max-width: 500px) {
   html,
   body {

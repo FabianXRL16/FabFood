@@ -34,7 +34,6 @@ export default {
 <style scoped>
 @import "../../assets/styles/variables.css";
 .back__container {
-  padding: var(--p-main);
   margin: 0;
   display: grid;
   grid-template-columns: 100px 1fr 100px;
@@ -43,15 +42,5 @@ export default {
   margin: 0;
   color: var(--white);
   text-align: center;
-}
-@media (max-width: 1180px) {
-  .back__container {
-    margin: 15px 0;
-  }
-}
-@media (max-width: 820px) {
-  .back__container {
-    padding: var(--p-main-mobile);
-  }
 }
 </style>

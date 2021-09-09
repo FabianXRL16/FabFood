@@ -40,3 +40,17 @@
   --p-mobile: 20px;
   --p-main-mobile: 0 var(--p-mobile) 0;
 }
+
+.container{
+  height: calc(100vh - 70px);
+  padding: var(--p-main);
+  box-sizing: border-box;
+  position: relative;
+  /*height: calc(100vh - 70px);
+  overflow-x: auto;*/
+}
+@media (max-width: 820px) {
+  .container {
+    padding: var(--p-main-mobile);
+  }
+}
