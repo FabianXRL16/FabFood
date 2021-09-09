@@ -4,7 +4,6 @@
     <div class="container__cart">
       <cart v-for="n in 3" :key="n" />
     </div>
-    <div></div>
   </div>
 </template>
 <script>
@@ -22,6 +21,9 @@ export default {
 @import "../../assets/styles/variables.css";
 .container__orderDetails {
   width: calc(100vw - 2 * var(--p) - 20px - 400px);
+  box-sizing: border-box;
+  height: calc(100vh - 70px - 148px);
+  overflow-x: auto;
   box-sizing: border-box;
 }
 .container__cart{

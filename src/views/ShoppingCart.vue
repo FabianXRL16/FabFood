@@ -26,6 +26,10 @@ export default {
   display: flex;
   gap: 20px;
   justify-content: space-between;
+  /*height: calc(100vh - 70px);
+  overflow-x: auto;*/
+  box-sizing: border-box;
+  position: relative;
 }
 @media (max-width: 1150px){
     .container{
