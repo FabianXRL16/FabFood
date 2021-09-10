@@ -1,170 +1,79 @@
 <template>
   <div class="cart">
-    <div
-      class="img"
-      style="background-image: url('https://barradeideas.com/wp-content/uploads/2019/09/fast-food.jpg')"
-    ></div>
+    <avatar-cart />
     <div class="content__cart">
-      <div class="text">
-        <div class="title">
-          <h6>Drink</h6>
-          <h3>Title asdasd as das d asd</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. At
-            consequuntur odit nam mollitia error excepturi.
-          </p>
-        </div>
-        <button>
-          <i class="far fa-trash-alt"></i>
-        </button>
+      <div class="content-title">
+        <h1 class="title">Title</h1>
+        <controls />
       </div>
-      <div class="content__price">
-        <div class="price">
-          s/. 12.00
-        </div>
-        <div class="count">
-          <button>-</button>
-          <h3>1</h3>
-          <button>+</button>
-        </div>
+      <div class="price">
+        $ 12.00
       </div>
+      <i class="fas fa-times"></i>
     </div>
   </div>
 </template>
 <script>
+import avatarCart from "@/components/items/avatarCart";
+import controls from "@/components/inputs/controlsCart";
 export default {
   name: "Cart",
-  components: {},
+  components: {
+    avatarCart,
+    controls
+  },
+  data() {
+    return {
+      img: "https://barradeideas.com/wp-content/uploads/2019/09/fast-food.jpg",
+    };
+  },
 };
 </script>
 
 <style scoped>
 @import "../../assets/styles/variables.css";
 .cart {
-  padding: 20px;
-  background-color: var(--gray-dark);
+  background-color: rgba(46,46,46,.9);
   display: flex;
-  gap: 20px;
-  box-sizing: border-box;
-  border-radius: 10px;
+  padding: 10px 30px;
+  border-bottom: 5px solid var(--bg-primary);
+  transition: .3s;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  color: var(--gray-ligth);
 }
-.text {
+.cart:hover{
+  background-color: rgba(46,46,46,1);
+  transition: .3s;
+}
+.cart:last-child {
+  margin-bottom: 0;
+}
+.content__cart {
+  width: calc(100% - 60px - 10px);
+  margin-left: 30px;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-.title {
-  width: 80%;
+.content-title{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
-.title h6,
-.title h3,
-.title p {
+h1,
+h2 {
   margin: 0;
+}
+.title{
+  font-size: var(--text-title-4);
 }
 .title p {
   font-size: 12px;
-}
-.title h6,
-.title p {
-  color: var(--gray-ligth);
-}
-.title h3 {
-  color: var(--white);
-}
-.text button {
-  background-color: transparent;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: 0.2s;
-  margin-bottom: auto;
-}
-.text button i {
-  color: var(--white);
-  font-size: 20px;
-}
-.text button:hover i {
-  transition: 0.2s;
-  color: var(--gray-ligth);
-}
-.content__price {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-.content__price .price {
-  color: var(--white);
-  font-size: 18px;
-}
-.img {
-  height: 150px;
-  width: 20%;
-  border-radius: 10px;
-  background-position: center;
-  background-size: cover;
-}
-.content__cart {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.count {
-  display: flex;
-}
-.count button {
-  background-color: var(--bg-primary);
-  outline: none;
-  border: none;
-  cursor: pointer;
-  margin: auto 0;
-  width: 25px;
-  height: 25px;
-  border-radius: 12.5px;
-  color: var(--white);
-  display: grid;
-  place-content: center;
-  font-weight: bold;
-  transition: 0.2s;
-}
-.count button:hover {
-  background-color: var(--white);
-  transition: 0.2s;
-  color: var(--bg-primary);
-}
-.count h3 {
-  margin: 0;
-  width: 40px;
-  text-align: center;
-  color: var(--white);
-}
-@media (max-width: 1150px){
-  .content__cart{
-    padding: 20px 0 0;
-  }
-}
-@media (max-width: 650px) {
-  .cart{
-    padding: 10px;
-    gap: 10px;
-  }
-  .content__cart{
-    width: 65%;
-  }
-  .img{
-    width: 35%;
-  }
-  .text button i {
-  font-size: 18px;
-}
-  .title p {
-    font-size: 12px;
-    white-space: nowrap;
-    width: 200px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-.title h3 {
- font-size: 15px;
-}
+  white-space: nowrap;
+  width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 </style>

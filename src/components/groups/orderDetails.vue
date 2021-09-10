@@ -2,7 +2,7 @@
   <div class="container__orderDetails">
     <titleMain :title="'Shopping Cart'" />
     <div class="container__cart">
-      <cart v-for="n in 2" :key="n" />
+      <cart v-for="n in 4" :key="n" />
     </div>
   </div>
 </template>
