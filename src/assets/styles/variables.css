@@ -25,6 +25,8 @@
   /* FONT SIZEs */
   --text-title-1: 50px;
   --text-title-2: 32px;
+  --text-title-3: 24px;
+  --text-title-4: 16px;
 
   --text-primary: 30px;
   --text-secondary: 16px;
@@ -39,6 +41,12 @@
   --p-main: 0 var(--p) 0;
   --p-mobile: 20px;
   --p-main-mobile: 0 var(--p-mobile) 0;
+}
+
+.btn{
+  outline: none;
+  cursor: pointer;
+  border: none;
 }
 
 .container{
