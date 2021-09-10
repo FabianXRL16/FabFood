@@ -20,5 +20,10 @@ export default {
 @import "../../assets/styles/variables.css";
 .title {
   color: var(--white);
+  height: 120px;
+  display: flex;
+}
+.title h1{
+    margin: auto 0;
 }
 </style>
