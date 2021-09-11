@@ -17,8 +17,8 @@ export default {
 </script>
 <style scoped>
 .img{
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
     border-radius: 15px;
     background-position: center;
     background-size: cover;

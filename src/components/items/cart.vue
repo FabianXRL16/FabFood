@@ -41,9 +41,11 @@ export default {
   border-radius: 5px;
   margin-bottom: 5px;
   color: var(--gray-ligth);
+  transform: scale(.99);
 }
 .cart:hover{
   background-color: rgba(46,46,46,1);
+  transform: scale(1);
   transition: .3s;
 }
 .cart:last-child {
@@ -51,7 +53,7 @@ export default {
 }
 .content__cart {
   width: calc(100% - 60px - 10px);
-  margin-left: 30px;
+  margin-left: 20px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -68,6 +70,15 @@ h2 {
 }
 .title{
   font-size: var(--text-title-4);
+}
+i{
+  cursor: pointer;
+  transform: scale(1);
+  transition: .5s;
+}
+i:hover{
+  transform: scale(1.5);
+  transition: .5s;
 }
 .title p {
   font-size: 12px;
