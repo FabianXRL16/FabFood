@@ -31,4 +31,10 @@ export default {
 .container__cart::-webkit-scrollbar{
   width: 0;
 }
+@media (max-width: 1160px){
+  .container__cart{
+    height: calc(100vh - 70px - 172px);
+    padding-bottom: 0;
+  }
+}
 </style>

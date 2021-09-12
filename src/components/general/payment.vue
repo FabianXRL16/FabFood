@@ -3,14 +3,14 @@
     <title-payment :totalPrice="212.0" />
     <div class="container__content">
       <div class="tabs">
-        <label class="tab" v-for="step in steps" :key="step.title" :for="step.title">
+        <button class="tab btn" v-for="step in steps" :key="step.title" @click="tab = step.title.toLowerCase()">
           {{ step.title }}
           <i :class="step.icon"></i>
-        </label>
+        </button>
       </div>
-      <formsContact v-if="true" />
-      <forms-address v-if="false" />
-      <forms-payment v-if="false" />
+      <formsContact v-if="tab === 'contact'" />
+      <forms-address v-if="tab === 'address'" />
+      <forms-payment v-if="tab === 'payment'" />
     </div>
   </div>
 </template>
@@ -30,6 +30,7 @@ export default {
         { title: "Address", icon: "fas fa-map-marker-alt" },
         { title: "Payment", icon: "far fa-credit-card" },
       ],
+      tab: "contact"
     };
   },
 };
