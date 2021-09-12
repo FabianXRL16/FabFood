@@ -8,7 +8,9 @@
           <i :class="step.icon"></i>
         </label>
       </div>
-      <formsContact />
+      <formsContact v-if="true" />
+      <forms-address v-if="false" />
+      <forms-payment v-if="false" />
     </div>
   </div>
 </template>
@@ -16,9 +18,11 @@
 <script>
 import titlePayment from "../general/titlePayment.vue";
 import formsContact from "../groups/formsContact.vue";
+import formsAddress from "../groups/formsAddress.vue";
+import FormsPayment from '../groups/formsPayment.vue';
 export default {
   name: "Payment",
-  components: { titlePayment, formsContact },
+  components: { titlePayment, formsContact, formsAddress, FormsPayment },
   data() {
     return {
       steps: [
