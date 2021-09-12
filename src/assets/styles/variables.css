@@ -55,6 +55,13 @@
   box-sizing: border-box;
   position: relative;
 }
+.stepNext{
+  background-color: var(--bg-primary);
+  color: var(--white);
+  padding: 10px 0;
+  font-size: 20px;
+  border-radius: 5px;
+}
 @media (max-width: 820px) {
   .container {
     padding: var(--p-main-mobile);
