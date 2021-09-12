@@ -1,24 +1,26 @@
 <template>
-    <div class="container__forms">
-        <text-fields :label="'Name'" />
-        <text-fields :label="'Last Name'" />
-        <text-fields :label="'Cell Phone Number'" />
-        <text-fields :label="'E-Mail'" />
-        <text-fields :label="'Captchap'" />
-      </div>
+  <form class="container__forms">
+    <text-fields :label="'Full Name'" :typeInput="'text'" />
+    <text-fields :label="'Cell Phone Number'" :typeInput="'tel'" />
+    <text-fields :label="'E-Mail'" :typeInput="'email'" />
+    <text-fields :label="'Captchap'" :typeInput="'text'" />
+    <controls-form :text="'Next'" />
+  </form>
 </template>
 
 <script>
 import textFields from "../inputs/textFields.vue";
-export default{
-    name: "FormsContact",
-    components:{
-        textFields
-    }
-}
+import controlsForm from "../groups/controlsForm.vue";
+export default {
+  name: "FormsContact",
+  components: {
+    textFields,
+    controlsForm,
+  },
+};
 </script>
 <style scoped>
-.container__forms{
+.container__forms {
   height: calc(100vh - 70px - 88px - 90px);
   padding: 20px 30px;
   box-sizing: border-box;
