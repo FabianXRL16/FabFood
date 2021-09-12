@@ -31,9 +31,6 @@ export default {
 .title h2 {
   margin: 0;
 }
-.btnPayment {
-  display: none;
-}
 @media (max-width: 1160px) {
   .title {
     margin-bottom: 25px;

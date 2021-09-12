@@ -23,7 +23,7 @@ export default {
   margin: 20px 0;
 }
 .container__cart{
-  height: calc(100vh - 70px - 88px);
+  height: calc(100vh - 70px - 99px);
   box-sizing: border-box;
   overflow-y: auto;
   padding-bottom: 10px;

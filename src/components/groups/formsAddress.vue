@@ -17,7 +17,7 @@ export default {
 </script>
 <style scoped>
 .container__formsAddresss {
-  height: calc(100vh - 70px - 88px - 90px);
+  height: calc(100vh - 70px - 88px - 75px);
   padding: 20px 30px;
   box-sizing: border-box;
   display: flex;

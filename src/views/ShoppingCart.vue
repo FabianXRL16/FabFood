@@ -2,7 +2,7 @@
   <div class="container container__shopping">
     <order-details />
     <payment class="payment" />
-    <title-payment :totalPrice="212.0" />
+    <title-payment class="smallPayment" :totalPrice="212.0" />
   </div>
 </template>
 
@@ -31,6 +31,9 @@ export default {
 .paymentMobile{
   display: none;
 }
+.smallPayment{
+    display: none;
+  }
 @media (max-width: 1160px) {
   .container__shopping {
     grid-template-columns: 1fr;
@@ -39,8 +42,8 @@ export default {
   .payment{
     display: none;
   }
-  .paymentMobile{
-    display: block;
+  .smallPayment{
+    display: flex;
   }
 }
 </style>
