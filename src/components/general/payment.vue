@@ -3,7 +3,12 @@
     <title-payment :totalPrice="212.0" />
     <div class="container__content">
       <div class="tabs">
-        <button class="tab btn" v-for="step in steps" :key="step.title" @click="tab = step.title.toLowerCase()">
+        <button
+          :class="step.style"
+          v-for="(step, i) in steps"
+          :key="i"
+          @click="focusTab(step, i)"
+        >
           {{ step.title }}
           <i :class="step.icon"></i>
         </button>
@@ -19,19 +24,37 @@
 import titlePayment from "../general/titlePayment.vue";
 import formsContact from "../groups/formsContact.vue";
 import formsAddress from "../groups/formsAddress.vue";
-import FormsPayment from '../groups/formsPayment.vue';
+import FormsPayment from "../groups/formsPayment.vue";
 export default {
   name: "Payment",
   components: { titlePayment, formsContact, formsAddress, FormsPayment },
   data() {
     return {
       steps: [
-        { title: "Contact", icon: "fas fa-user" },
-        { title: "Address", icon: "fas fa-map-marker-alt" },
-        { title: "Payment", icon: "far fa-credit-card" },
+        { title: "Contact", icon: "fas fa-user", style: "tab btn tabF" },
+        { title: "Address", icon: "fas fa-map-marker-alt", style: "tab btn" },
+        { title: "Payment", icon: "far fa-credit-card", style: "tab btn" },
       ],
-      tab: "contact"
+      tab: "contact",
     };
+  },
+  methods: {
+    focusTab(step, i) {
+      this.tab = step.title.toLowerCase();
+      if (i == 0) {
+        this.steps[0].style = "tab btn tabF";
+        this.steps[1].style = "tab btn";
+        this.steps[2].style = "tab btn";
+      } else if (i == 1) {
+        this.steps[1].style = "tab btn tabF";
+        this.steps[2].style = "tab btn";
+        this.steps[0].style = "tab btn";
+      } else {
+        this.steps[2].style = "tab btn tabF";
+        this.steps[0].style = "tab btn";
+        this.steps[1].style = "tab btn";
+      }
+    },
   },
 };
 </script>
@@ -62,16 +85,12 @@ export default {
   position: relative;
   cursor: pointer;
 }
-.tab:nth-child(1):hover,
-.tab:nth-child(2):hover,
-.tab:nth-child(3):hover {
+.tabF {
   color: var(--bg-primary);
   transition: 0.3s;
-  background-color: rgba(242,7,70,.15);
+  background-color: rgba(242, 7, 70, 0.15);
 }
-.tab:nth-child(1):hover::after,
-.tab:nth-child(2):hover::after,
-.tab:nth-child(3):hover::after {
+.tabF::after {
   content: "";
   position: absolute;
   width: 100%;
