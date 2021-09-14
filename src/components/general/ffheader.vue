@@ -48,7 +48,8 @@ export default {
   padding: var(--p-main);
   z-index: 9;
   height: 70px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #32010d;/*guardar en variables globales de css*/
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
