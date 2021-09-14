@@ -36,11 +36,12 @@ html,
 body {
   margin: 0;
   font-family: var(--font_primary);
-  background-image: url(./assets/img/background-home.jpg);
+  /*background-image: url(./assets/img/background-home.jpg);
   background-size: cover;
   background-position-x: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: fixed;*/
+  background-color: var(--bg-secondary);
   height: 100vh;
 }
 #app {
@@ -60,6 +61,7 @@ body {
   color: wheat;
   z-index: 12;
 }
+/*
 @media (max-width: 500px) {
   html,
   body {
@@ -69,5 +71,5 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
-}
+}*/
 </style>
