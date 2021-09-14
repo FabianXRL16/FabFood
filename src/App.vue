@@ -41,7 +41,14 @@ body {
   background-position-x: center;
   background-repeat: no-repeat;
   background-attachment: fixed;*/
-  background-color: var(--bg-secondary);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 45%,
+    rgba(50, 1, 13, 1) 84%,
+    rgba(50, 1, 13, 1) 100%
+  );
   height: 100vh;
 }
 #app {
