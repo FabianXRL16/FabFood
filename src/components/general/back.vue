@@ -37,20 +37,21 @@ export default {
   margin: 0;
   display: grid;
   grid-template-columns: 100px 1fr 100px;
+  place-content: center;
 }
 .title {
   margin: 0;
   color: var(--white);
   text-align: center;
 }
-@media (max-width: 475px){
-  .title{
+@media (max-width: 475px) {
+  .title {
     font-size: 25px;
   }
   .back__container {
-  margin: 0;
-  display: grid;
-  grid-template-columns: 10px 1fr 10px;
-}
+    margin: 0;
+    display: grid;
+    grid-template-columns: 10px 1fr 10px;
+  }
 }
 </style>
