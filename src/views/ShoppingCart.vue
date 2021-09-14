@@ -1,48 +1,54 @@
 <template>
-  <div class="container container__shopping">
-    <order-details />
+  <div class="container__shopping">
+    <order-details v-if="mobileTitle" />
     <payment class="payment" />
-    <title-payment class="smallPayment" :totalPrice="212.0" />
+    <payment v-if="!mobileTitle" @noToShow="mobileTitle = !mobileTitle" />
+    <title-payment-mobile
+      v-if="mobileTitle"
+      class="smallPayment"
+      :totalPrice="212.0"
+      @toShow="mobileTitle = !mobileTitle"
+    />
   </div>
 </template>
 
 <script>
 import orderDetails from "../components/groups/orderDetails.vue";
-import titlePayment from "../components/general/titlePayment.vue";
 import payment from "../components/general/payment.vue";
+import TitlePaymentMobile from "../components/general/titlePaymentMobile.vue";
 export default {
   name: "ShoppingCart",
   components: {
     orderDetails,
-    payment, titlePayment
+    payment,
+    TitlePaymentMobile,
   },
   data() {
-    return {};
+    return {
+      mobileTitle: true,
+    };
   },
 };
 </script>
 
 <style scoped>
-.container__shopping{
+.container__shopping {
   display: grid;
   grid-template-columns: 1fr 450px;
   gap: 20px;
 }
-.paymentMobile{
+.smallPayment {
   display: none;
 }
-.smallPayment{
-    display: none;
-  }
 @media (max-width: 1160px) {
   .container__shopping {
     grid-template-columns: 1fr;
     gap: 0;
   }
-  .payment{
+  .payment {
     display: none;
   }
-  .smallPayment{
+  .smallPayment {
     display: flex;
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="container__payment">
-    <title-payment :totalPrice="212.0" />
+    <title-payment :totalPrice="212.0" @close="notShow" />
     <div class="container__content">
       <div class="tabs">
         <button
@@ -55,6 +55,9 @@ export default {
         this.steps[1].style = "tab btn";
       }
     },
+    notShow(){
+      this.$emit("noToShow")
+    }
   },
 };
 </script>

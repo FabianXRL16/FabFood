@@ -31,4 +31,11 @@ export default {
   background-color: var(--white);
   border-radius: 0 0 5px 5px;
 }
+
+@media (max-width: 550px) {
+  .container__forms{
+    padding: 10px 20px;
+    gap: 15px;
+  }
+}
 </style>

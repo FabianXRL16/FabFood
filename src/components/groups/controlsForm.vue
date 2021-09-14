@@ -35,4 +35,11 @@ export default {
   color: var(--white);
   font-size: 20px;
 }
+
+@media (max-width: 550px) {
+  .controlsForm{
+    margin-top: 10px;
+    gap: 15px;
+  }
+}
 </style>

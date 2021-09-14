@@ -1,9 +1,6 @@
 <template>
   <form class="container__forms">
-    <select-card
-      :label="'Select Card Type'"
-      :typeCard="typeCard"
-    />
+    <select-card :label="'Select Card Type'" :typeCard="typeCard" />
     <text-fields :label="'Card Number'" :typeInput="'card'" />
     <text-fields :label="'Card Name'" :typeInput="'text'" />
     <div class="cardInfo">
@@ -21,7 +18,9 @@ import controlsForm from "../groups/controlsForm.vue";
 export default {
   name: "FormsPayment",
   components: {
-    textFields, selectCard, controlsForm
+    textFields,
+    selectCard,
+    controlsForm,
   },
   data() {
     return {
@@ -49,9 +48,19 @@ export default {
 }
 .cardInfo {
   display: grid;
-  grid-template-columns: 1fr 150px;
+  grid-template-columns: 1fr 100px;
   gap: 20px;
   box-sizing: border-box;
   width: 100%;
+}
+
+@media (max-width: 550px) {
+  .container__forms {
+    padding: 10px 20px;
+    gap: 15px;
+  }
+  .cardInfo{
+    gap: 10px;
+  }
 }
 </style>
