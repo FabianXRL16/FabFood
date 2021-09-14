@@ -33,7 +33,7 @@ export default {
 <style scoped>
 @import "../../assets/styles/variables.css";
 .cart {
-  background-color: rgba(46,46,46,.9);
+  background-color: rgba(36, 1, 10, 0.3);
   display: flex;
   padding: 10px 30px;
   border-bottom: 5px solid var(--bg-primary);
@@ -44,7 +44,7 @@ export default {
   transform: scale(.99);
 }
 .cart:hover{
-  background-color: rgba(46,46,46,1);
+  background-color:  rgba(36, 1, 10, 1);
   transform: scale(1);
   transition: .3s;
 }
@@ -86,5 +86,10 @@ i:hover{
   width: 200px;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+@media (max-width: 500px){
+  .cart {
+  padding: 10px 20px;
+  }
 }
 </style>
