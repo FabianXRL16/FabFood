@@ -31,7 +31,7 @@
         </div>
         <div class="description" v-if="ok">
           <p>
-            {{food.description}}
+            {{ food.description }}
           </p>
         </div>
       </div>
@@ -64,16 +64,12 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 8px;
+  border-radius: 5px;
   transition: 0.5s;
-  border-bottom: 8px solid var(--bg-primary);
-}
-.card:hover {
-  transition: 0.5s;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-bottom: 5px solid var(--bg-primary);
 }
 .card__container {
-  background: rgb(0, 0, 0);
+  background: #32010d;
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 1) 12%,
@@ -81,7 +77,7 @@ export default {
     rgba(255, 255, 255, 0) 78%,
     rgba(0, 0, 0, 1) 100%
   );
-  border-radius: 8px 8px 0 0;
+  border-radius: 5px 5px 0 0;
   height: 100%;
   transition: 0.5s;
   background-color: transparent;
@@ -93,8 +89,8 @@ export default {
 }
 .card__container:hover,
 .focus {
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 8px 8px 0 0;
+  background-color: rgba(25, 1, 7, 0.6);
+  border-radius: 5px 5px 0 0;
 }
 .price {
   margin-left: auto;
