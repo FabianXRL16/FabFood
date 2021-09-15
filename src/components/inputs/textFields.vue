@@ -42,4 +42,9 @@ input {
   border: none;
   color: var(--black-ligth);
 }
+@media (max-width: 550px){
+  label{
+    font-size: 14px;
+  }
+}
 </style>
