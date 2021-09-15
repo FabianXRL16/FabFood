@@ -81,4 +81,9 @@ export default {
     display: flex;
   }
 }
+@media (max-width: 475px){
+  .container__shoppingCart {
+    gap: 23.5px;
+  }
+}
 </style>
