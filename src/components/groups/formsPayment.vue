@@ -51,7 +51,7 @@ export default {
   }
 @media (max-width: 550px) {
   .forms__payment {
-    gap: 10px;
+    gap: 15px;
     padding: 20px;
   }
   .cardInfo {
