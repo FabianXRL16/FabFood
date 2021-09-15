@@ -1,5 +1,5 @@
 <template>
-  <form class="container__forms">
+  <form class="forms__contact">
     <text-fields :label="'Full Name'" :typeInput="'text'" />
     <text-fields :label="'Cell Phone Number'" :typeInput="'tel'" />
     <text-fields :label="'E-Mail'" :typeInput="'email'" />
@@ -20,22 +20,16 @@ export default {
 };
 </script>
 <style scoped>
-.container__forms {
-  height: calc(100vh - 70px - 88px - 75px);
-  padding: 20px 30px;
-  box-sizing: border-box;
+.forms__contact {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  background-color: var(--white);
-  border-radius: 0 0 5px 5px;
+  gap: 25px;
+  padding: 25px 20px 20px;
 }
-
 @media (max-width: 550px) {
-  .container__forms{
-    padding: 10px 20px;
-    gap: 15px;
+  .forms__contact {
+    gap: 12px;
+    padding: 20px;
   }
 }
 </style>
