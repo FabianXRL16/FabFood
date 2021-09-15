@@ -1,5 +1,5 @@
 <template>
-  <form class="container__forms">
+  <form class="forms__payment">
     <select-card :label="'Select Card Type'" :typeCard="typeCard" />
     <text-fields :label="'Card Number'" :typeInput="'card'" />
     <text-fields :label="'Card Name'" :typeInput="'text'" />
@@ -35,32 +35,28 @@ export default {
 };
 </script>
 <style scoped>
-.container__forms {
-  height: calc(100vh - 70px - 88px - 75px);
-  padding: 20px 30px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  background-color: var(--white);
-  border-radius: 0 0 5px 5px;
-}
-.cardInfo {
+.forms__payment {
   display: grid;
-  grid-template-columns: 1fr 100px;
-  gap: 20px;
-  box-sizing: border-box;
+  gap: 24px;
+  padding: 20px;
   width: 100%;
+  box-sizing: border-box;
 }
-
-@media (max-width: 550px) {
-  .container__forms {
-    padding: 10px 20px;
-    gap: 15px;
-  }
-  .cardInfo{
+  .cardInfo {
+    display: grid;
+    grid-template-columns: 1fr 100px;
     gap: 10px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+@media (max-width: 550px) {
+  .forms__payment {
+    gap: 10px;
+    padding: 20px;
+  }
+  .cardInfo {
+    grid-template-columns: 1fr 130px;
+    gap:10px;
   }
 }
 </style>
