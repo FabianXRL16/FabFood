@@ -28,7 +28,7 @@ export default {
 }
 @media (max-width: 550px) {
   .forms__contact {
-    gap: 12px;
+    gap: 15px;
     padding: 20px;
   }
 }
