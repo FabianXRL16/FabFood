@@ -29,7 +29,7 @@ export default {
 .selectCard{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 label {
   color: var(--gray-dark);
@@ -55,5 +55,10 @@ label {
 }
 .radio {
   display: none;
+}
+@media (max-width: 550px){
+  label{
+    font-size: 14px;
+  }
 }
 </style>
