@@ -2,8 +2,8 @@
   <div class="title">
     <h1>Costo Total</h1>
     <h2>$. {{ totalPrice }}.00</h2>
-    <button class="btn btnPayment" @click="toShowPayment">
-      <i class="fas fa-dollar-sign"></i>
+    <button class="btn btnPayment" @click="showPayment">
+      <i :class="openPayment ? 'fas fa-dollar-sign':'fas fa-times'"></i>
     </button>
   </div>
 </template>
@@ -17,11 +17,17 @@ export default {
       default: 0.0,
     },
   },
-  methods: {
-    toShowPayment() {
-        this.$emit("toShow")
-    },
+  data(){
+    return{
+      openPayment: true
+    }
   },
+  methods:{
+    showPayment(){
+      this.openPayment = !this.openPayment
+      this.$emit("show")
+    }
+  }
 };
 </script>
 
@@ -29,7 +35,6 @@ export default {
 @import "../../assets/styles/variables.css";
 .title {
   color: var(--white);
-  margin: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -42,9 +47,6 @@ export default {
   display: none;
 }
 @media (max-width: 1160px) {
-  .title {
-    margin-bottom: 25px;
-  }
   .btnPayment {
     display: block;
     background-color: var(--bg-primary);
