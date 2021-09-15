@@ -18,12 +18,12 @@ export default {
 <style scoped>
 @import "../../assets/styles/variables.css";
 .container__cart{
-  height: calc(100vh - 70px - 110px);
+  height: calc(100vh - 70px - 112px);
   box-sizing: border-box;
   overflow-y: auto;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 9.5px;
+  gap: 9.2px;
 }
 .container__cart::-webkit-scrollbar{
   width: 0;
