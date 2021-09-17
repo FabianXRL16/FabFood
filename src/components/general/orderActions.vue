@@ -1,6 +1,6 @@
 <template>
   <div class="buttons-group">
-    <button-car class="car" />
+    <button-car class="car" @closed="close" />
     <button-primary :title="'Confirm order'" />
   </div>
 </template>
@@ -14,6 +14,11 @@ export default {
     buttonCar,
     buttonPrimary,
   },
+  methods:{
+      close(){
+        this.$emit("closed")
+      }
+  }
 };
 </script>
 
