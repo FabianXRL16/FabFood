@@ -1,14 +1,23 @@
 <template>
-  <router-link to="/shoppingCart" class="button">
-    <div class="count">
-      <strong>10+</strong>
-    </div>
-    <img src="../../assets/img/carrito.png" alt="" />
-  </router-link>
+  <button class="btn button" @click="closeUp">
+    <router-link to="/shoppingCart" class="button">
+      <div class="count">
+        <strong>10+</strong>
+      </div>
+      <img src="../../assets/img/carrito.png" alt="" />
+    </router-link>
+  </button>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "buttonCar",
+  methods: {
+    closeUp(){
+      this.$emit("closed")
+    }
+  },
+};
 </script>
 
 <style scoped>
