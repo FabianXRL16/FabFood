@@ -8,7 +8,7 @@
       </div>
       <div class="contentMenu">
           <ffnav :up="true" class="nav" @closed="closeMenu" />
-          <orderActions class="order" />
+          <orderActions class="order" @closed="closeMenu" />
       </div>
     </div>
   </div>
