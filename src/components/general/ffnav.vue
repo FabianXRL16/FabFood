@@ -16,7 +16,7 @@ export default {
       title: "Confirm order",
       list: [
         { id: 1, subtitle: "Find food", ref: "/findFood" },
-        { id: 2, subtitle: "Categories", ref: "/categories" },
+        { id: 2, subtitle: "Combos", ref: "/combos" },
         { id: 3, subtitle: "About us", ref: "/AboutUs" },
       ],
     };
