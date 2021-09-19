@@ -1,33 +1,33 @@
 <template>
-  <div class="container__payment">
-    <title-payment :totalPrice="212.0" @close="notShow" />
-    <div class="container__content">
-      <div class="tabs">
-        <button
-          :class="step.style"
-          v-for="(step, i) in steps"
-          :key="i"
-          @click="focusTab(step, i)"
-        >
-          {{ step.title }}
-          <i :class="step.icon"></i>
-        </button>
-      </div>
+  <div class="container__content">
+    <div class="tabs">
+      <button
+        :class="step.style"
+        v-for="(step, i) in steps"
+        :key="i"
+        @click="focusTab(step, i)"
+      >
+        {{ step.title }}
+        <i :class="step.icon"></i>
+      </button>
+    </div>
+    <div class="container__forms">
       <formsContact v-if="tab === 'contact'" />
-      <forms-address v-if="tab === 'address'" />
       <forms-payment v-if="tab === 'payment'" />
     </div>
   </div>
 </template>
 
 <script>
-import titlePayment from "../general/titlePayment.vue";
 import formsContact from "../groups/formsContact.vue";
-import formsAddress from "../groups/formsAddress.vue";
+// import formsAddress from "../groups/formsAddress.vue";
 import FormsPayment from "../groups/formsPayment.vue";
 export default {
   name: "Payment",
-  components: { titlePayment, formsContact, formsAddress, FormsPayment },
+  components: { formsContact, 
+  // formsAddress, 
+  FormsPayment 
+  },
   data() {
     return {
       steps: [
@@ -55,9 +55,9 @@ export default {
         this.steps[1].style = "tab btn";
       }
     },
-    notShow(){
-      this.$emit("noToShow")
-    }
+    notShow() {
+      this.$emit("noToShow");
+    },
   },
 };
 </script>
@@ -66,17 +66,18 @@ export default {
 .container__content {
   display: flex;
   flex-direction: column;
-  gap: 5px;
 }
 .tabs {
+  height: 60px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background-color: var(--white);
   border-radius: 8px 8px 0px 0;
+  border-bottom: 1px solid var(--bg-secondary);
 }
 .tab {
   background-color: var(--white);
-  padding: 20px 0;
+  height: 60px;
   border-radius: 8px 8px 0 0;
   color: var(--gray-ligth);
   font-size: var(--text-title-4);
@@ -96,9 +97,24 @@ export default {
 .tabF::after {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 1px;
+  width: 100.5%;
+  height: 3px;
   background-color: var(--bg-primary);
-  bottom: 0;
+  bottom: -1px;
+}
+.container__forms{
+  height:calc(100vh - 243px);
+  background: var(--white);
+  border-radius: 0 0 5px 5px;
+}
+@media (max-width: 1160px){
+  .container__forms{
+    height: auto;
+  }
+}
+@media (max-width: 475px){
+  .tab {
+    gap: 10px;
+  }
 }
 </style>

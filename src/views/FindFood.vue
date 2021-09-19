@@ -37,10 +37,14 @@ export default {
   },
   created(){
     this.onFoodFilter()
+    // this.$store.dispatch("loadFoods")
   },
-  computed: {
+  computed:{
+    // getData(){
+    //   return this.$store.getters['getFoods']
+    // },
     ...mapState("categories", ["categories"]),
-    ...mapState("foods", ["foods"]),
+    ...mapState("foods", ["foods"])
   },
   methods: {
     toShowFood(id) {
