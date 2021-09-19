@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/views/Home.vue'
 import FindFood from '@/views/FindFood.vue'
+import Combos from '@/views/Combos.vue'
 import ShoppingCart from '@/views/ShoppingCart.vue'
 import Error from '@/views/Error.vue'
 
@@ -29,6 +30,11 @@ export default new Router({
             path: '/shoppingcart',
             name: ShoppingCart,
             component: ShoppingCart
+        },
+        {
+            path: '/combos',
+            name: Combos,
+            component: Combos
         }
     ]
 })
