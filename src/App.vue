@@ -36,12 +36,8 @@ html,
 body {
   margin: 0;
   font-family: var(--font_primary);
-  /*background-image: url(./assets/img/background-home.jpg);
-  background-size: cover;
-  background-position-x: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;*/
-  background: rgb(0, 0, 0);
+  background-attachment: fixed;
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 1) 0%,
@@ -68,15 +64,4 @@ body {
   color: wheat;
   z-index: 12;
 }
-/*
-@media (max-width: 500px) {
-  html,
-  body {
-    background-image: url(./assets/img/background-home-mobile.jpg);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-}*/
 </style>
