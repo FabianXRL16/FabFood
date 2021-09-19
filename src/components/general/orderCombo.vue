@@ -73,6 +73,10 @@ strong{
   }
   .offer{
     margin-bottom: 20px;
+    font-size: var(--text-title-4);
   }
+  strong{
+  font-size: var(--text-title-3);
+}
 }
 </style>
