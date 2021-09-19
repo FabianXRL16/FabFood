@@ -48,6 +48,7 @@ export default {
 .img:nth-child(1):hover, .img:nth-child(2):hover, .img:nth-child(3):hover, .img:nth-child(4):hover{
     transform: scale(1);
     transition: .3s;
+  box-shadow: rgba(543, 1, 13, 0.4) 0px 50px 100px -20px, rgba(0, 0, 0, 1) 0px 30px 60px -30px;
 }
 @media (max-width: 820px) {
   .container__img {
