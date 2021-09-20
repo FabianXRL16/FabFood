@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="this.$route.path === '/' ? 'found' : 'foundNotHome'">
     <ffheader @menuUp="up" class="header" />
     <div class="space"></div>
     <router-view class="container" />
@@ -37,6 +37,17 @@ body {
   margin: 0;
   font-family: var(--font_primary);
   background-repeat: no-repeat;
+}
+#app {
+  position: relative;
+}
+.found{
+  background-image: url("./assets/img/wallpaperHome.png");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+.foundNotHome{
   background-attachment: fixed;
   background: linear-gradient(
     0deg,
@@ -45,10 +56,6 @@ body {
     rgba(50, 1, 13, 1) 84%,
     rgba(50, 1, 13, 1) 100%
   );
-  height: 100vh;
-}
-#app {
-  position: relative;
 }
 .header {
   position: fixed;
