@@ -1,5 +1,5 @@
 <template>
-  <div class="ffheader">
+  <div class="ffheader" :class="this.$route.path === '/' ? 'foundHeaderHome' : 'foundHeaderNotHome'">
     <logo />
     <div class="navbar">
       <ffnav class="nav" />
@@ -33,11 +33,11 @@ export default {
       console.log(val);
     },
   },
-  methods:{
-    up(){
-      this.$emit("menuUp")
-    }
-  }
+  methods: {
+    up() {
+      this.$emit("menuUp");
+    },
+  },
 };
 </script>
 
@@ -48,13 +48,18 @@ export default {
   padding: var(--p-main);
   z-index: 9;
   height: 70px;
-  background-color: #32010d;/*guardar en variables globales de css*/
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.navbar{
+.foundHeaderNotHome {
+  background-color: var(--bg-secondary-light);
+}
+.foundHeaderHome {
+  background-color: transparent;
+}
+.navbar {
   display: flex;
   gap: 20px;
 }
