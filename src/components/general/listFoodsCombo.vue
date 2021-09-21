@@ -75,9 +75,6 @@ export default {
 };
 </script>
 <style scoped>
-.listFoodsCombo {
-  color: antiquewhite;
-}
 .listFoodsCombo h2 {
   color: var(--white);
   margin-top: 0;
