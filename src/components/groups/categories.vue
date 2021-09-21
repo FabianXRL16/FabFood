@@ -11,7 +11,7 @@
         <template>
           <img
             :src="
-              require(`../../assets/img/iconCategories/${category.name.toLowerCase()}.png`)
+              require(`@/assets/img/iconCategories/${category.name.toLowerCase()}.png`)
             "
             alt=""
           />
