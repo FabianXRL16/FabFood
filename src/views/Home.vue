@@ -13,16 +13,16 @@
         ></path>
       </svg>
     </div>
-    <container-info-categories />
+    <container-info-principles />
   </div>
 </template>
 
 <script>
-import ContainerInfoCategories from "../components/general/containerInfoCategories.vue";
+import ContainerInfoPrinciples from "../components/general/containerInfoPrinciples.vue";
 import PannerHome from "../components/general/pannerHome.vue";
 export default {
   name: "Home",
-  components: { PannerHome, ContainerInfoCategories },
+  components: { PannerHome, ContainerInfoPrinciples },
   data() {
     return {};
   },
