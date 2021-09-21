@@ -6,9 +6,8 @@
       They say that <b>eating rich is a sin,</b> that's why we invite <br />
       you to <b>do penance with us</b>
     </p>
-    <span>+51 987658761</span>
+    <span>+(900) 123 - 456</span>
     <button class="btn btnMain">Order Now</button>
-    <h1 v-if="this.$router.name === !''">a</h1>
   </div>
 </template>
 
@@ -20,7 +19,7 @@ export default {
 
 <style scoped>
 .pannerHome {
-  height: calc(100vh - 70px);
+  height: calc(100vh - 200px);
   display: flex;
   flex-direction: column;
   place-content: center;
@@ -66,5 +65,47 @@ span {
   border-radius: 20px;
   color: var(--white);
   margin-top: 50px;
+  transform: scale(1.2);
+  transition: 0.3s;
+}
+.btnMain:hover {
+  background-color: var(--white);
+  color: var(--bg-primary);
+  transform: scale(1);
+  transition: 0.3s;
+}
+@media (max-width: 920px) {
+  .pannerHome {
+    height: calc(100vh - 100px);
+  }
+  h1 {
+    font-size: 46px;
+  }
+  p {
+    font-size: 14px;
+  }
+  p b {
+    font-size: 16px;
+  }
+}
+@media (max-width: 820px) {
+  .pannerHome {
+    height: calc(100vh - 180px);
+  }
+  h1 {
+    font-size: 36px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 12px;
+  }
+  p b {
+    font-size: 13px;
+  }
+  .btnMain {
+    margin-top: 40px;
+  }
 }
 </style>
