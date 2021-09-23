@@ -45,7 +45,7 @@
           <button
             v-for="button in buttons"
             :key="button.id"
-            type="button"
+            :type="button.type"
             class="btn btnContact"
             :class="button.styles"
           >
@@ -97,6 +97,7 @@ export default {
           styles: "btnCancel",
           icon: "fas fa-times",
           action: "",
+          type: "reset"
         },
         {
           id: 1,
@@ -104,6 +105,7 @@ export default {
           styles: "btnSend",
           icon: "fas fa-paper-plane",
           action: "",
+          type: "button"
         },
       ],
     };
