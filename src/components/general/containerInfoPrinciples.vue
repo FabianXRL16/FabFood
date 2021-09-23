@@ -11,13 +11,15 @@
         </template>
       </card-home>
     </div>
+    <container-botton-home />
   </div>
 </template>
 
 <script>
 import cardHome from "../items/cardHome.vue";
+import ContainerBottonHome from "./containerBottonHome.vue";
 export default {
-  components: { cardHome },
+  components: { cardHome, ContainerBottonHome },
   name: "containerInfoPrinciples",
   data() {
     return {
@@ -52,12 +54,11 @@ export default {
   width: 100%;
   left: 0;
   background: var(--bg-primary);
-  margin: 10px 0 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 60px var(--p);
+  margin: 10px 0;
+  display: grid;
+  gap: 50px;
+  grid-template-rows: auto 1fr;
+  padding: 60px var(--p) 0;
   box-sizing: border-box;
   color: var(--white);
 }
