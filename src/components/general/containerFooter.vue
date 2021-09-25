@@ -28,7 +28,7 @@
             @click="showForm = !showForm"
           >
             <i
-              :class="showForm ? 'fas fa-chevron-down' : 'fas fa-chevron-up'"
+              :class="showForm ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"
             ></i>
           </button>
         </p>
@@ -116,7 +116,7 @@ export default {
 <style scoped>
 .containerFooter {
   background-color: var(--black);
-  padding: 0 var(--p);
+  padding: 10px var(--p) 0;
   display: grid;
   grid-template-rows: repeat(2, auto);
 }
@@ -126,7 +126,7 @@ export default {
   padding-top: 25px;
 }
 .img {
-  height: 80px;
+  height: 60px;
 }
 h4,
 h5 {
@@ -156,7 +156,7 @@ span {
 .messageContact {
   margin: 0;
   width: 350px;
-  font-size: 16px;
+  font-size: 15px;
   text-align: right;
   color: var(--gray-ligth);
 }
@@ -184,6 +184,7 @@ span {
   padding: 10px;
   background-color: var(--black-ligth);
   width: 350px;
+  height: 90px;
   color: var(--gray-ligth);
   font-size: 16px;
   text-align: right;
