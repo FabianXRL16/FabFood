@@ -26,7 +26,7 @@
             ></i>
           </div>
           <div>
-            <button class="countSymbol">Order now</button>
+            <button class="countSymbol" @click="addOrder">Order now</button>
           </div>
         </div>
         <div class="description" v-if="ok">
@@ -48,11 +48,25 @@ export default {
       default: () => {},
     },
   },
-  components: {},
   data() {
     return {
       ok: false,
     };
+  },
+  methods: {
+    addOrder() {
+      this.ok = false;
+      console.log(
+        this.$store.dispatch("registerOrder", {
+          id: this.food.id,
+          name: this.food.name,
+          category: this.food.category,
+          price: this.food.offer ? this.food.newPrice : this.food.price,
+          img: this.food.img,
+          preparationTime: this.food.preparationTime,
+        })
+      );
+    },
   },
 };
 </script>
