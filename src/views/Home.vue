@@ -53,4 +53,9 @@ export default {
     bottom: 10px;
   }
 }
+@media (max-width: 400px) {
+  .container__home {
+  overflow-x: hidden;
+}
+}
 </style>
