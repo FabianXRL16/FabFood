@@ -61,42 +61,42 @@ export default {
   transition: 0.3s;
 }
 .img2:nth-child(1) {
-  background-image: url("../../assets/img/banner/banner1.jpg");
+  background-image: url("../../assets/img/banner/banner5.jpg");
   transform: scale(0.8);
   transition: 0.3s;
 }
 .img2:nth-child(2) {
-  background-image: url("../../assets/img/banner/banner2.jpg");
+  background-image: url("../../assets/img/banner/banner6.jpg");
   transform: scale(0.9);
   transition: 0.3s;
 }
 .img2:nth-child(3) {
-  background-image: url("../../assets/img/banner/banner3.jpg");
+  background-image: url("../../assets/img/banner/banner7.jpg");
   transform: scale(0.7);
   transition: 0.5s;
 }
 .img2:nth-child(4) {
-  background-image: url("../../assets/img/banner/banner4.jpg");
+  background-image: url("../../assets/img/banner/banner8.jpg");
   transform: scale(0.85);
   transition: 0.3s;
 }
 .img3:nth-child(1) {
-  background-image: url("../../assets/img/banner/banner1.jpg");
+  background-image: url("../../assets/img/banner/banner9.jpg");
   transform: scale(0.8);
   transition: 0.3s;
 }
 .img3:nth-child(2) {
-  background-image: url("../../assets/img/banner/banner2.jpg");
+  background-image: url("../../assets/img/banner/banner10.jpg");
   transform: scale(0.9);
   transition: 0.3s;
 }
 .img3:nth-child(3) {
-  background-image: url("../../assets/img/banner/banner3.jpg");
+  background-image: url("../../assets/img/banner/banner11.jpg");
   transform: scale(0.7);
   transition: 0.5s;
 }
 .img3:nth-child(4) {
-  background-image: url("../../assets/img/banner/banner4.jpg");
+  background-image: url("../../assets/img/banner/banner12.jpg");
   transform: scale(0.85);
   transition: 0.3s;
 }
