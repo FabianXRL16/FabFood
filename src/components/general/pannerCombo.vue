@@ -36,7 +36,7 @@ export default {
   background-position: center;
   background-size: cover;
   height: 500px;
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: rgba(543, 1, 13, 0.5) 0px 50px 100px -20px,
     rgba(0, 0, 0, 1) 0px 30px 60px -30px;
 }
@@ -62,32 +62,32 @@ export default {
 }
 .img2:nth-child(1) {
   background-image: url("../../assets/img/banner/banner5.jpg");
-  transform: scale(0.8);
+  transform: scale(0.9);
   transition: 0.3s;
 }
 .img2:nth-child(2) {
   background-image: url("../../assets/img/banner/banner6.jpg");
-  transform: scale(0.9);
+  transform: scale(0.66);
   transition: 0.3s;
 }
 .img2:nth-child(3) {
   background-image: url("../../assets/img/banner/banner7.jpg");
-  transform: scale(0.7);
+  transform: scale(0.85);
   transition: 0.5s;
 }
 .img2:nth-child(4) {
   background-image: url("../../assets/img/banner/banner8.jpg");
-  transform: scale(0.85);
+  transform: scale(0.75);
   transition: 0.3s;
 }
 .img3:nth-child(1) {
   background-image: url("../../assets/img/banner/banner9.jpg");
-  transform: scale(0.8);
+  transform: scale(0.77);
   transition: 0.3s;
 }
 .img3:nth-child(2) {
   background-image: url("../../assets/img/banner/banner10.jpg");
-  transform: scale(0.9);
+  transform: scale(0.85);
   transition: 0.3s;
 }
 .img3:nth-child(3) {
@@ -97,7 +97,7 @@ export default {
 }
 .img3:nth-child(4) {
   background-image: url("../../assets/img/banner/banner12.jpg");
-  transform: scale(0.85);
+  transform: scale(0.9);
   transition: 0.3s;
 }
 .img:nth-child(1):hover,
