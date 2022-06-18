@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="panner">
-      <panner-combo />
-      <buttons-panner />
+      <panner-combo :currentBanner="currentBanner" />
+      <buttons-panner @changeBanner="changeBanner" />
     </div>
     <div class="details">
       <list-foods-combo />
@@ -24,6 +24,16 @@ export default {
     OrderCombo,
     buttonsPanner,
   },
+  data() {
+    return {
+      currentBanner: 1
+    }
+  },
+  methods: {
+    changeBanner(n){
+      this.currentBanner = n
+    }
+  }
 };
 </script>
 
