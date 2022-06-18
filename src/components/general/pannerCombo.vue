@@ -1,12 +1,26 @@
 <template>
   <div class="container__img">
-    <div class="img" v-for="n in 4" :key="n"></div>
+    <template  v-if="currentBanner === 1">
+      <div class="img img1" v-for="n in 4" :key="n*100"></div>
+    </template>
+    <template  v-if="currentBanner === 2">
+      <div class="img img2" v-for="n in 4" :key="n"></div>
+    </template>
+    <template  v-if="currentBanner === 3">
+      <div class="img img3" v-for="n in 4" :key="n*10"></div>
+    </template>
   </div>
 </template>
 
 <script>
 export default {
   name: "pannerCombo",
+  props: {
+    currentBanner: {
+      type: Number,
+      default: 1
+    }
+  }
 };
 </script>
 
@@ -26,22 +40,62 @@ export default {
   box-shadow: rgba(543, 1, 13, 0.5) 0px 50px 100px -20px,
     rgba(0, 0, 0, 1) 0px 30px 60px -30px;
 }
-.img:nth-child(1) {
+.img1:nth-child(1) {
   background-image: url("../../assets/img/banner/banner1.jpg");
   transform: scale(0.8);
   transition: 0.3s;
 }
-.img:nth-child(2) {
+.img1:nth-child(2) {
   background-image: url("../../assets/img/banner/banner2.jpg");
   transform: scale(0.9);
   transition: 0.3s;
 }
-.img:nth-child(3) {
+.img1:nth-child(3) {
   background-image: url("../../assets/img/banner/banner3.jpg");
   transform: scale(0.7);
   transition: 0.5s;
 }
-.img:nth-child(4) {
+.img1:nth-child(4) {
+  background-image: url("../../assets/img/banner/banner4.jpg");
+  transform: scale(0.85);
+  transition: 0.3s;
+}
+.img2:nth-child(1) {
+  background-image: url("../../assets/img/banner/banner1.jpg");
+  transform: scale(0.8);
+  transition: 0.3s;
+}
+.img2:nth-child(2) {
+  background-image: url("../../assets/img/banner/banner2.jpg");
+  transform: scale(0.9);
+  transition: 0.3s;
+}
+.img2:nth-child(3) {
+  background-image: url("../../assets/img/banner/banner3.jpg");
+  transform: scale(0.7);
+  transition: 0.5s;
+}
+.img2:nth-child(4) {
+  background-image: url("../../assets/img/banner/banner4.jpg");
+  transform: scale(0.85);
+  transition: 0.3s;
+}
+.img3:nth-child(1) {
+  background-image: url("../../assets/img/banner/banner1.jpg");
+  transform: scale(0.8);
+  transition: 0.3s;
+}
+.img3:nth-child(2) {
+  background-image: url("../../assets/img/banner/banner2.jpg");
+  transform: scale(0.9);
+  transition: 0.3s;
+}
+.img3:nth-child(3) {
+  background-image: url("../../assets/img/banner/banner3.jpg");
+  transform: scale(0.7);
+  transition: 0.5s;
+}
+.img3:nth-child(4) {
   background-image: url("../../assets/img/banner/banner4.jpg");
   transform: scale(0.85);
   transition: 0.3s;
