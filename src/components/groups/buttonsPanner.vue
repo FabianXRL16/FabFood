@@ -1,14 +1,22 @@
 <template>
   <div class="containerButtonPanner">
-    <button class="btn btnPanner" v-for="n in 3" :key="n" @click="changeBanner(n)"></button>
+    <button class="btn btnPanner" :class="currentButton === 1 ? 'btnActive' : ''" @click="changeBanner(1)"></button>
+    <button class="btn btnPanner" :class="currentButton === 2 ? 'btnActive' : ''" @click="changeBanner(2)"></button>
+    <button class="btn btnPanner" :class="currentButton === 3 ? 'btnActive' : ''" @click="changeBanner(3)"></button>
   </div>
 </template>
 <script>
 export default {
   name: "buttonsPanner",
+  data() {
+    return {
+      currentButton: 1
+    }
+  },
   methods: {
     changeBanner(n) {
       this.$emit('changeBanner',n)
+      this.currentButton = n
     }
   }
 };
@@ -28,7 +36,7 @@ export default {
   background-color: var(--bg-secondary);
   transition: .3s;
 }
-.btnPanner:nth-child(1) {
+.btnActive {
   background-color: var(--bg-primary);
 }
 .btnPanner:hover {
