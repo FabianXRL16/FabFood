@@ -1,11 +1,16 @@
 <template>
   <div class="containerButtonPanner">
-    <button class="btn btnPanner" v-for="n in 3" :key="n"></button>
+    <button class="btn btnPanner" v-for="n in 3" :key="n" @click="changeBanner(n)"></button>
   </div>
 </template>
 <script>
 export default {
   name: "buttonsPanner",
+  methods: {
+    changeBanner(n) {
+      this.$emit('changeBanner',n)
+    }
+  }
 };
 </script>
 <style scoped>
