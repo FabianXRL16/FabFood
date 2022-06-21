@@ -4,10 +4,10 @@
     <div class="content__cart">
       <div class="content-title">
         <h1 class="title">{{order.id}}</h1>
-        <controls />
+        <controls @changeCount="changeCount" />
       </div>
       <div class="price">
-        $ {{order.price}}
+        $ {{order.price*num}}
       </div>
       <i class="fas fa-times"></i>
     </div>
@@ -30,9 +30,14 @@ export default {
   },
   data() {
     return {
-      img: "https://barradeideas.com/wp-content/uploads/2019/09/fast-food.jpg",
+      num: 1
     };
   },
+  methods: {
+    changeCount(count) {
+      this.num = this.num + count
+    }
+  }
 };
 </script>
 
