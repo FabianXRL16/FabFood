@@ -16,8 +16,9 @@ export default new Vuex.Store({
     newOrder: (state) => state.__order,
     updateCountOrder: (state) => state.__countOrder
   },
-  ations: {
+  actions: {
     addOrder({ commit }, newOrder) {
+      console.log(newOrder)
       commit("ADD_ORDER", newOrder);
     },
     updateCountOrder({ commit }) {
@@ -29,7 +30,7 @@ export default new Vuex.Store({
       state.__order.push(newOrder)
     },
     UPDATED_COUNT_ORDER(state) {
-      state.__countOrder.length = state.__order
+      state.__countOrder = state.__order.length
     }
   }
 });
