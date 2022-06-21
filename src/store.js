@@ -23,6 +23,9 @@ export default new Vuex.Store({
     updateCountOrder({ commit }) {
       commit("UPDATED_COUNT_ORDER");
     },
+    deleteOrder({commit}, id) {
+      commit("DELETE_ORDER", id)
+    }
   },
   mutations: {
     ADD_ORDER(state, newOrder) {
@@ -30,6 +33,10 @@ export default new Vuex.Store({
     },
     UPDATED_COUNT_ORDER(state) {
       state.__countOrder = state.__order.length
+    },
+    DELETE_ORDER(state, id){
+      let pos = state.__order.findIndex(i => i.id === id)
+      state.__order.splice(pos, 1)
     }
   }
 });
