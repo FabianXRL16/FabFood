@@ -1,13 +1,13 @@
 <template>
   <div class="cart">
-    <avatar-cart />
+    <avatar-cart :img="order.img" />
     <div class="content__cart">
       <div class="content-title">
-        <h1 class="title">Title</h1>
+        <h1 class="title">{{order.id}}</h1>
         <controls />
       </div>
       <div class="price">
-        $ 12.00
+        $ {{order.price}}
       </div>
       <i class="fas fa-times"></i>
     </div>
@@ -21,6 +21,12 @@ export default {
   components: {
     avatarCart,
     controls
+  },
+  props: {
+    order: {
+      type: Object,
+      default: () => {}
+    }
   },
   data() {
     return {
@@ -37,6 +43,7 @@ export default {
   display: flex;
   padding: 10px 30px;
   border-bottom: 5px solid var(--bg-primary);
+  max-height: 105px;
   transition: .3s;
   border-radius: 5px;
   margin-bottom: 5px;
