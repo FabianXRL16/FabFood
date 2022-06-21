@@ -5,19 +5,31 @@ import data from "../api/data.json";
 
 Vue.use(Vuex);
 
-export const state = () => ({
-  
-});
-
 export default new Vuex.Store({
   state: {
     foods: data.foods,
-    categories: data.categories
+    categories: data.categories,
+    __order: [],
+    __countOrder: 0
+  },
+  getters: {
+    newOrder: (state) => state.__order,
+    updateCountOrder: (state) => state.__countOrder
   },
   ations: {
-    
+    addOrder({ commit }, newOrder) {
+      commit("ADD_ORDER", newOrder);
+    },
+    updateCountOrder({ commit }) {
+      commit("UPDATED_COUNT_ORDER");
+    },
   },
   mutations: {
-    
+    ADD_ORDER(state, newOrder) {
+      state.__order.push(newOrder)
+    },
+    UPDATED_COUNT_ORDER(state) {
+      state.__countOrder.length = state.__order
+    }
   }
 });
