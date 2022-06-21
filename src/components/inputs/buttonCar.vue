@@ -2,7 +2,7 @@
   <button class="btn button" @click="closeUp">
     <router-link to="/shoppingCart" class="button">
       <div class="count">
-        <strong>10+</strong>
+        <strong>{{ countOrder }}</strong>
       </div>
       <img src="../../assets/img/carrito.png" alt="" />
     </router-link>
@@ -12,8 +12,15 @@
 <script>
 export default {
   name: "buttonCar",
+  computed: {
+    countOrder() {
+      return this.$store.state.__countOrder > 10 
+        ? '+10' 
+        : this.$store.state.__countOrder
+    }
+  },
   methods: {
-    closeUp(){
+    closeUp() {
       this.$emit("closed")
     }
   },
