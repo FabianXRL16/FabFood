@@ -9,7 +9,7 @@
       <div class="price">
         $ {{order.price*num}}
       </div>
-      <i class="fas fa-times"></i>
+      <i @click="deleteOrder(order.id)" class="fas fa-times"></i>
     </div>
   </div>
 </template>
@@ -36,6 +36,10 @@ export default {
   methods: {
     changeCount(count) {
       this.num = this.num + count
+    },
+    deleteOrder(id) {
+      this.$store.dispatch("deleteOrder", id);
+      this.$store.dispatch("updateCountOrder");
     }
   }
 };
