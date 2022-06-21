@@ -25,7 +25,10 @@ export default new Vuex.Store({
     },
     deleteOrder({commit}, id) {
       commit("DELETE_ORDER", id)
-    }
+    },
+    orderNow({commit}, id) {
+      commit("ORDER_NOW", id)
+    },
   },
   mutations: {
     ADD_ORDER(state, newOrder) {
@@ -37,6 +40,10 @@ export default new Vuex.Store({
     DELETE_ORDER(state, id){
       let pos = state.__order.findIndex(i => i.id === id)
       state.__order.splice(pos, 1)
+    },
+    ORDER_NOW(state, id){
+      let pos = state.__order.findIndex(i => i.id === id)
+      state.foods[pos].order = !state.foods[pos].order
     }
   }
 });
