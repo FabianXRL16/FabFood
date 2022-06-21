@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 
 import back from "@/components/general/back.vue";
 import search from "../components/inputs/search.vue";
@@ -32,19 +31,13 @@ export default {
     return {
       title: "To eat!",
       category: 1,
-      data: []
+      data: [],
+      foods: this.$store.state.foods,
+      categories: this.$store.state.categories
     };
   },
   created(){
     this.onFoodFilter()
-    // this.$store.dispatch("loadFoods")
-  },
-  computed:{
-    // getData(){
-    //   return this.$store.getters['getFoods']
-    // },
-    ...mapState("categories", ["categories"]),
-    ...mapState("foods", ["foods"])
   },
   methods: {
     toShowFood(id) {
