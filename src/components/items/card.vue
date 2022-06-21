@@ -1,6 +1,6 @@
 <template>
   <div class="card" :style="`background-image: url(${food.img});`">
-    <div :class="ok ? 'card__container focus' : 'card__container'">
+    <div :class="ok || order ? 'card__container focus' : 'card__container'">
       <div v-if="food.offer" class="offer price">
         <span class="del">Before <del>${{ food.price }}</del></span>
         | <strong>${{ food.newPrice }}</strong>
@@ -20,7 +20,9 @@
             <i class="far fa-star gray" v-for="m in 5 - food.score" :key="m * 10"></i>
           </div>
           <div>
-            <button class="countSymbol" @click="addOrder">Order now</button>
+            <button class="countSymbol" :class="order ? 'countSymbolCancel' : ''" @click="addOrder(food.id)">{{ order ?
+                'Order' : 'Order now'
+            }}</button>
           </div>
         </div>
         <div class="description" v-if="ok">
@@ -44,22 +46,33 @@ export default {
   },
   data() {
     return {
-      ok: false
+      ok: false,
+      order: false
     };
   },
   methods: {
-    addOrder() {
-      this.$store.dispatch("addOrder", {
-        id: this.food.id,
-        name: this.food.name,
-        category: this.food.category,
-        price: this.food.offer ? this.food.newPrice : this.food.price,
-        img: this.food.img,
-        preparationTime: this.food.preparationTime,
-      });
-      this.$store.dispatch("updateCountOrder");
+    addOrder(id) {
+      if (this.order) {
+        this.$store.dispatch("deleteOrder", id);
+        this.$store.dispatch("updateCountOrder");
+      } else {
+        this.$store.dispatch("addOrder", {
+          id: id,
+          name: this.food.name,
+          category: this.food.category,
+          price: this.food.offer ? this.food.newPrice : this.food.price,
+          img: this.food.img,
+          preparationTime: this.food.preparationTime,
+        });
+        this.$store.dispatch("updateCountOrder");
+      }
+      this.order = !this.order
+      this.$store.dispatch("orderNow", id);
     },
   },
+  mounted() {
+    this.order = this.food.order
+  }
 };
 </script>
 
@@ -180,6 +193,11 @@ export default {
   cursor: pointer;
   color: var(--white);
   font-family: var(--font_primary);
+}
+
+.countSymbolCancel {
+  background-color: var(--bg-secondary-light);
+  width: 70px !important;
 }
 
 @media (max-width: 820px) {
