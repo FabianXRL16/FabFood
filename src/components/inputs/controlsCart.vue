@@ -1,14 +1,31 @@
 <template>
   <div class="controlsCart">
-    <button class="btn"><i class="fas fa-minus"></i></button>
-    <div class="span">1</div>
-    <button class="btn"><i class="fas fa-plus"></i></button>
+    <button @click="minus" class="btn"><i class="fas fa-minus"></i></button>
+    <div class="span">{{num}}</div>
+    <button @click="plus" class="btn"><i class="fas fa-plus"></i></button>
   </div>
 </template>
 
 <script>
 export default {
   name: "controlsCart",
+  data() {
+    return{
+      num: 1
+    }
+  },
+  methods: {
+    minus() {
+      if(this.num > 1){
+        this.$emit('changeCount', -1)
+        this.num = this.num - 1
+      }
+    },
+    plus() {
+        this.$emit('changeCount', +1)
+        this.num = this.num + 1
+    }
+  }
 };
 </script>
 <style scoped>
