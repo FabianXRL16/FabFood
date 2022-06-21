@@ -38,6 +38,7 @@ export default {
       this.num = this.num + count
     },
     deleteOrder(id) {
+      this.$store.dispatch("orderNow", id);
       this.$store.dispatch("deleteOrder", id);
       this.$store.dispatch("updateCountOrder");
     }
