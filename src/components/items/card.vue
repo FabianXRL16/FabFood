@@ -67,7 +67,6 @@ export default {
         this.$store.dispatch("updateCountOrder");
       }
       this.order = !this.order
-      this.$store.dispatch("orderNow", id);
     },
   },
   mounted() {
