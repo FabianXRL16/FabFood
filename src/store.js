@@ -18,7 +18,6 @@ export default new Vuex.Store({
   },
   actions: {
     addOrder({ commit }, newOrder) {
-      console.log(newOrder)
       commit("ADD_ORDER", newOrder);
     },
     updateCountOrder({ commit }) {
