@@ -8,10 +8,14 @@
 export default {
   name: "AvatarCart",
   components: {},
-  data(){
-    return{
-      img: 'https://barradeideas.com/wp-content/uploads/2019/09/fast-food.jpg'
+  props: {
+    img: {
+      type: String,
+      default: ''
     }
+  },
+  data(){
+    return{}
   }
 };
 </script>
