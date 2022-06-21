@@ -22,8 +22,10 @@ export default {
       }
     },
     plus() {
+      if(this.num < 10){
         this.$emit('changeCount', +1)
         this.num = this.num + 1
+      }
     }
   }
 };
