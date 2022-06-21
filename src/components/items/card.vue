@@ -44,7 +44,7 @@ export default {
   },
   data() {
     return {
-      ok: false,
+      ok: false
     };
   },
   methods: {
