@@ -1,13 +1,13 @@
 <template>
   <div class="container__img">
+    <template  v-if="currentBanner === 0">
+      <div class="img img1" v-for="n in $store.state.combos[0].foods" :key="n.id"></div>
+    </template>
     <template  v-if="currentBanner === 1">
-      <div class="img img1" v-for="n in 4" :key="n*100"></div>
+      <div class="img img2" v-for="m in $store.state.combos[1].foods" :key="m.id"></div>
     </template>
     <template  v-if="currentBanner === 2">
-      <div class="img img2" v-for="n in 4" :key="n"></div>
-    </template>
-    <template  v-if="currentBanner === 3">
-      <div class="img img3" v-for="n in 4" :key="n*10"></div>
+      <div class="img img3" v-for="j in $store.state.combos[2].foods" :key="j.id"></div>
     </template>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
   props: {
     currentBanner: {
       type: Number,
-      default: 1
+      default: 0
     }
   }
 };
@@ -30,7 +30,7 @@ export default {
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   padding: 0 50px;
-  cursor: none;
+  /* cursor: none; */
 }
 .img {
   background-position: center;
