@@ -26,7 +26,7 @@ export default {
   },
   data() {
     return {
-      currentBanner: 1
+      currentBanner: 0
     }
   },
   methods: {
