@@ -1,8 +1,8 @@
 <template>
   <div class="containerButtonPanner">
+    <button class="btn btnPanner" :class="currentButton === 0 ? 'btnActive' : ''" @click="changeBanner(0)"></button>
     <button class="btn btnPanner" :class="currentButton === 1 ? 'btnActive' : ''" @click="changeBanner(1)"></button>
     <button class="btn btnPanner" :class="currentButton === 2 ? 'btnActive' : ''" @click="changeBanner(2)"></button>
-    <button class="btn btnPanner" :class="currentButton === 3 ? 'btnActive' : ''" @click="changeBanner(3)"></button>
   </div>
 </template>
 <script>
@@ -10,7 +10,7 @@ export default {
   name: "buttonsPanner",
   data() {
     return {
-      currentButton: 1
+      currentButton: 0
     }
   },
   methods: {
