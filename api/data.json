@@ -513,6 +513,7 @@
       "name": "...",
       "preparationTime": 45,
       "count": 1,
+      "order": false,
       "foods": [
         {
           "id": "drinks_2",
@@ -578,6 +579,7 @@
       "name": "...",
       "preparationTime": 25,
       "count": 1,
+      "order": false,
       "foods": [
         {
           "id": "sweets_3",
@@ -641,6 +643,7 @@
       "name": "...",
       "preparationTime": 25,
       "count": 1,
+      "order": false,
       "foods": [
         {
           "id": "dinners_4",
