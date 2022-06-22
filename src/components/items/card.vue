@@ -47,7 +47,7 @@ export default {
   data() {
     return {
       ok: false,
-      order: false
+      order: false,
     };
   },
   methods: {
@@ -56,14 +56,7 @@ export default {
         this.$store.dispatch("deleteOrder", id);
         this.$store.dispatch("updateCountOrder");
       } else {
-        this.$store.dispatch("addOrder", {
-          id: id,
-          name: this.food.name,
-          category: this.food.category,
-          price: this.food.offer ? this.food.newPrice : this.food.price,
-          img: this.food.img,
-          preparationTime: this.food.preparationTime,
-        });
+        this.$store.dispatch("addOrder", this.food);
         this.$store.dispatch("updateCountOrder");
       }
       this.order = !this.order
