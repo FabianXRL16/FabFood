@@ -10,11 +10,11 @@ export default new Vuex.Store({
     foods: data.foods,
     categories: data.categories,
     __order: [],
-    __countOrder: 0,
+    __countOrder: 0
   },
   getters: {
     newOrder: (state) => state.__order,
-    updateCountOrder: (state) => state.__countOrder,
+    updateCountOrder: (state) => state.__countOrder
   },
   actions: {
     addOrder({ commit }, newOrder) {
