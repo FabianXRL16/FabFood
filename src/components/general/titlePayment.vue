@@ -11,11 +11,16 @@
 <script>
 export default {
   name: "titlePayment",
-  props: {
-    totalPrice: {
-      type: Number,
-      default: 0.0,
-    },
+  computed: {
+    totalPrice() {
+      let order = this.$store.state.__order
+      let price = 0
+      order.map((i) => {
+        let count = i.count * i.price
+        price = price + count
+      })
+      return price
+    }
   },
   methods:{
     closed(){
