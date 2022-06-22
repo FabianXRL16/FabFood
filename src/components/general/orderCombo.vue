@@ -7,7 +7,7 @@
       <span>Before <del>${{combos[currentBanner].previousPrice}}.00</del></span>
       <strong>${{combos[currentBanner].price}}.00</strong>
     </div>
-    <button class="countSymbol">Order now</button>
+    <button class="countSymbol" @click="orderCombo">Order now</button>
   </div>
 </template>
 
@@ -23,6 +23,12 @@ export default {
   computed: {
     combos() {
       return this.$store.state.combos
+    }
+  },
+  methods: {
+    orderCombo(){
+      this.$store.dispatch('addOrder', this.combos[this.currentBanner])
+      this.$store.dispatch("updateCountOrder");
     }
   }
 };
