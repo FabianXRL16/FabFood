@@ -1,7 +1,7 @@
 <template>
   <div class="listFoodsCombo">
     <h2>{{ combosName }}</h2>
-    <div class="content__item" v-for="food in $store.state.combos[currentBanner].foods" :key="food.id">
+    <div class="content__item" v-for="food in foods" :key="food.id">
       <div class="item__text">
         <div class="title">
           <h3>{{ food.id }}</h3>
