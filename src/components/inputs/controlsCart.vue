@@ -9,22 +9,34 @@
 <script>
 export default {
   name: "controlsCart",
-  data() {
-    return{
-      num: 1
+  props: {
+    num: {
+      type: Number,
+      default: 1
+    },
+    id: {
+      type: String,
+      default: ''
     }
+  },
+  data() {
+    return{}
   },
   methods: {
     minus() {
       if(this.num > 1){
-        this.$emit('changeCount', -1)
-        this.num = this.num - 1
+        this.$store.dispatch('orderCountFood',{
+          id: this.id,
+          counter: -1
+        })
       }
     },
     plus() {
       if(this.num < 10){
-        this.$emit('changeCount', +1)
-        this.num = this.num + 1
+        this.$store.dispatch('orderCountFood',{
+          id: this.id,
+          counter: +1
+        })
       }
     }
   }
