@@ -31,14 +31,17 @@
         </svg>
       </div>
     </div>
+    <titlePaymentVue class="payment"  />
   </div>
 </template>
 <script>
 import cart from "../items/cart.vue";
+import titlePaymentVue from "../general/titlePayment.vue";
 export default {
   name: "OrderDetails",
   components: {
     cart,
+    titlePaymentVue 
   },
   computed: {
     orders() {
@@ -78,15 +81,27 @@ export default {
   width: 30px;
 }
 
+.payment {
+  display: flex;
+}
+
 @media (max-width: 1160px) {
   .container__cart {
     height: calc(100vh - 70px - 180px);
     padding-bottom: 0;
     gap: 13px;
   }
+  .payment {
+    display: none;
+  }
 }
 
 @media (max-width: 1620px) {
+  .container__cart {
+    height: calc(100vh - 70px - 180px);
+    padding-bottom: 0;
+    gap: 13px;
+  }
   .msg {
     display: flex;
     flex-direction: column;
@@ -101,5 +116,6 @@ export default {
     width: 25px;
     height: 25px;
   }
+
 }
 </style>
