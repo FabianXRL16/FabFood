@@ -3,11 +3,11 @@
     <avatar-cart :img="order.img" />
     <div class="content__cart">
       <div class="content-title">
-        <h1 class="title">{{order.id}}</h1>
-        <controls @changeCount="changeCount" />
+        <h1 class="title">{{ order.id }}</h1>
+        <controls :num="order.count" :id="order.id" />
       </div>
       <div class="price">
-        $ {{order.price*num}}
+        $ {{ order.price * order.count }}
       </div>
       <i @click="deleteOrder(order.id)" class="fas fa-times"></i>
     </div>
@@ -25,18 +25,13 @@ export default {
   props: {
     order: {
       type: Object,
-      default: () => {}
+      default: () => { }
     }
   },
   data() {
-    return {
-      num: 1
-    };
+    return {};
   },
   methods: {
-    changeCount(count) {
-      this.num = this.num + count
-    },
     deleteOrder(id) {
       this.$store.dispatch("deleteOrder", id);
       this.$store.dispatch("updateCountOrder");
@@ -47,6 +42,7 @@ export default {
 
 <style scoped>
 @import "../../assets/styles/variables.css";
+
 .cart {
   background-color: rgba(36, 1, 10, 0.3);
   display: flex;
@@ -59,14 +55,17 @@ export default {
   color: var(--gray-ligth);
   transform: scale(.99);
 }
-.cart:hover{
-  background-color:  rgba(36, 1, 10, 1);
+
+.cart:hover {
+  background-color: rgba(36, 1, 10, 1);
   transform: scale(1);
   transition: .3s;
 }
+
 .cart:last-child {
   margin-bottom: 0;
 }
+
 .content__cart {
   width: calc(100% - 60px - 10px);
   margin-left: 20px;
@@ -75,27 +74,33 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-.content-title{
+
+.content-title {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
+
 h1,
 h2 {
   margin: 0;
 }
-.title{
+
+.title {
   font-size: var(--text-title-4);
 }
-i{
+
+i {
   cursor: pointer;
   transform: scale(1);
   transition: .5s;
 }
-i:hover{
+
+i:hover {
   transform: scale(1.5);
   transition: .5s;
 }
+
 .title p {
   font-size: 12px;
   white-space: nowrap;
@@ -103,9 +108,10 @@ i:hover{
   text-overflow: ellipsis;
   overflow: hidden;
 }
-@media (max-width: 500px){
+
+@media (max-width: 500px) {
   .cart {
-  padding: 10px 20px;
+    padding: 10px 20px;
   }
 }
 </style>
