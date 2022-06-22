@@ -29,6 +29,9 @@ export default new Vuex.Store({
     },
     orderCountFood({ commit }, obj) {
       commit('ORDER_COUNT_FOOD', obj)
+    },
+    addOrderCombo({ commit }, obj) {
+      commit('ADD_ORDER_COMBO', obj)
     }
   },
   mutations: {
@@ -40,16 +43,27 @@ export default new Vuex.Store({
     UPDATED_COUNT_ORDER(state) {
       state.__countOrder = state.__order.length
     },
-    DELETE_ORDER(state, id) {
-      let pos = state.__order.findIndex((i) => i.id === id)
-      let posParent = state.foods.findIndex((i) => i.id === id)
+    DELETE_ORDER(state, order) {
+      let pos = state.__order.findIndex((i) => i.id === order.id)
       state.__order.splice(pos, 1)
-      state.foods[posParent].order = false
-      state.foods[posParent].count = 1
+      if(order.type === 'food'){
+        let posParent = state.foods.findIndex((i) => i.id === order.id)
+        state.foods[posParent].order = false
+        state.foods[posParent].count = 1
+      }else {
+        let posParent = state.combos.findIndex((i) => i.id === order.id)
+        state.combos[posParent].order = false
+        state.combos[posParent].count = 1
+      }
     },
     ORDER_COUNT_FOOD(state, obj) {
       let pos = state.__order.findIndex((i) => i.id === obj.id)
       state.__order[pos].count = state.__order[pos].count + obj.counter
-    }
+    },
+    ADD_ORDER_COMBO(state, newOrder) {
+      state.__order.push(newOrder)
+      let pos = state.combos.findIndex((i) => i.id === newOrder.id)
+      state.combos[pos].order = true
+    },
   },
 })
