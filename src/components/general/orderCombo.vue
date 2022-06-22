@@ -1,14 +1,11 @@
 <template>
   <div class="orderCombo">
     <p>
-      Foods Special is lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Iusto quasi est tenetur nostrum incidunt totam rem similique quibusdam a
-      sequi necessitatibus fuga tempore libero, delectus officia. Dignissimos
-      nemo esse tempore.
+      {{combos[currentBanner].description}}
     </p>
     <div class="offer">
-      <span>Before <del>$187.00</del></span>
-      <strong>$167.00</strong>
+      <span>Before <del>${{combos[currentBanner].previousPrice}}.00</del></span>
+      <strong>${{combos[currentBanner].newPrice}}.00</strong>
     </div>
     <button class="countSymbol">Order now</button>
   </div>
@@ -17,7 +14,17 @@
 <script>
 export default {
   name: "orderCombo",
-  components: {},
+  props: {
+    currentBanner: {
+      type: Number,
+      default: 0
+    }
+  },
+  computed: {
+    combos() {
+      return this.$store.state.combos
+    }
+  }
 };
 </script>
 <style scoped>
