@@ -5,7 +5,7 @@
     </p>
     <div class="offer">
       <span>Before <del>${{combos[currentBanner].previousPrice}}.00</del></span>
-      <strong>${{combos[currentBanner].newPrice}}.00</strong>
+      <strong>${{combos[currentBanner].price}}.00</strong>
     </div>
     <button class="countSymbol">Order now</button>
   </div>
