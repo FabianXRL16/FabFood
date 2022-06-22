@@ -2,7 +2,9 @@
   <div class="card" :style="`background-image: url(${food.img});`">
     <div :class="ok || order ? 'card__container focus' : 'card__container'">
       <div v-if="food.offer" class="offer price">
-        <span class="del">Before <del>${{ food.price }}</del></span>
+        <span class="del"
+          >Before <del>${{ food.price }}</del></span
+        >
         | <strong>${{ food.newPrice }}</strong>
       </div>
       <div v-else class="normal price">${{ food.price }}</div>
@@ -17,12 +19,20 @@
         <div class="count">
           <div>
             <i class="far fa-star" v-for="n in food.score" :key="n"></i>
-            <i class="far fa-star gray" v-for="m in 5 - food.score" :key="m * 10"></i>
+            <i
+              class="far fa-star gray"
+              v-for="m in 5 - food.score"
+              :key="m * 10"
+            ></i>
           </div>
           <div>
-            <button class="countSymbol" :class="order ? 'countSymbolCancel' : ''" @click="addOrder(food)">{{ order ?
-                'Order' : 'Order now'
-            }}</button>
+            <button
+              class="countSymbol"
+              :class="order ? 'countSymbolCancel' : ''"
+              @click="addOrder(food)"
+            >
+              {{ order ? "Order" : "Order now" }}
+            </button>
           </div>
         </div>
         <div class="description" v-if="ok">
@@ -41,7 +51,7 @@ export default {
   props: {
     food: {
       type: Object,
-      default: () => { },
+      default: () => {},
     },
   },
   data() {
@@ -52,19 +62,16 @@ export default {
   },
   methods: {
     addOrder(food) {
-      if (this.order) {
-        this.$store.dispatch("deleteOrder", food);
-        this.$store.dispatch("updateCountOrder");
-      } else {
-        this.$store.dispatch("addOrder", food);
-        this.$store.dispatch("updateCountOrder");
-      }
-      this.order = !this.order
+      this.order
+        ? this.$store.dispatch("deleteOrder", food)
+        : this.$store.dispatch("addOrder", food);
+      this.$store.dispatch("updateCountOrder");
+      this.order = !this.order;
     },
   },
   mounted() {
-    this.order = this.food.order
-  }
+    this.order = this.food.order;
+  },
 };
 </script>
 
@@ -83,11 +90,13 @@ export default {
 
 .card__container {
   background: #32010d;
-  background: linear-gradient(0deg,
-      rgba(0, 0, 0, 1) 12%,
-      rgba(255, 255, 255, 0) 49%,
-      rgba(255, 255, 255, 0) 78%,
-      rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 12%,
+    rgba(255, 255, 255, 0) 49%,
+    rgba(255, 255, 255, 0) 78%,
+    rgba(0, 0, 0, 1) 100%
+  );
   border-radius: 5px 5px 0 0;
   height: 100%;
   transition: 0.5s;
