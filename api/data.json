@@ -514,6 +514,7 @@
       "preparationTime": 45,
       "count": 1,
       "order": false,
+      "img": "https://i.pinimg.com/736x/b8/b2/97/b8b2978dabe88945f92335a30f908037.jpg",
       "foods": [
         {
           "id": "drinks_2",
@@ -580,6 +581,7 @@
       "preparationTime": 25,
       "count": 1,
       "order": false,
+      "img": "https://i.pinimg.com/736x/b8/b2/97/b8b2978dabe88945f92335a30f908037.jpg",
       "foods": [
         {
           "id": "sweets_3",
@@ -644,6 +646,7 @@
       "preparationTime": 25,
       "count": 1,
       "order": false,
+      "img": "https://i.pinimg.com/736x/b8/b2/97/b8b2978dabe88945f92335a30f908037.jpg",
       "foods": [
         {
           "id": "dinners_4",
