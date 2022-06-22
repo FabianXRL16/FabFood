@@ -1,13 +1,15 @@
 <template>
   <div class="orderCombo">
     <p>
-      {{combos[currentBanner].description}}
+      {{ combos[currentBanner].description }}
     </p>
     <div class="offer">
-      <span>Before <del>${{combos[currentBanner].previousPrice}}.00</del></span>
-      <strong>${{combos[currentBanner].price}}.00</strong>
+      <span>Before <del>${{ combos[currentBanner].previousPrice }}.00</del></span>
+      <strong>${{ combos[currentBanner].price }}.00</strong>
     </div>
-    <button class="countSymbol" @click="orderCombo">Order now</button>
+    <button class="countSymbol" :class="combos[currentBanner].order ? 'order' : ''" @click="orderCombo">
+      {{ order ? 'Order' : 'Order now' }}
+    </button>
   </div>
 </template>
 
@@ -25,10 +27,27 @@ export default {
       return this.$store.state.combos
     }
   },
+  data() {
+    return {
+      order: false,
+    }
+  },
   methods: {
-    orderCombo(){
-      this.$store.dispatch('addOrder', this.combos[this.currentBanner])
+    orderCombo() {
+      let combo = this.combos[this.currentBanner]
+      this.order
+        ? this.$store.dispatch("deleteOrder", combo)
+        : this.$store.dispatch("addOrder", combo)
       this.$store.dispatch("updateCountOrder");
+      this.order = !this.order
+    }
+  },
+  mounted() {
+    this.order = this.combos[this.currentBanner].order
+  },
+  watch: {
+    currentBanner() {
+      this.order = this.combos[this.currentBanner].order
     }
   }
 };
@@ -38,12 +57,14 @@ export default {
   display: flex;
   flex-direction: column;
 }
+
 .orderCombo p {
   color: var(--gray-ligth);
   text-align: justify;
   margin-top: 0;
   font-size: var(--text-title-4);
 }
+
 .countSymbol {
   outline: none;
   border: none;
@@ -57,12 +78,13 @@ export default {
   font-size: var(--text-title-4);
   transition: 0.3s;
 }
-.countSymbol:hover {
-  background-color: var(--white);
-  color: var(--bg-primary);
+
+.order {
+  background-color: var(--bg-secondary-light);
+  color: var(--white);
   transition: 0.3s;
-  font-weight: 700;
 }
+
 .offer {
   height: 50px;
   font-size: var(--text-title-3);
@@ -73,23 +95,28 @@ export default {
   margin-bottom: 32px;
   gap: 30px;
 }
-strong{
+
+strong {
   color: var(--white);
   font-size: var(--text-title-2);
 }
+
 @media (max-width: 820px) {
   .countSymbol {
     height: 50px;
   }
+
   .orderCombo p {
     font-size: var(--text-subtitle-1);
   }
-  .offer{
+
+  .offer {
     margin-bottom: 20px;
     font-size: var(--text-title-4);
   }
-  strong{
-  font-size: var(--text-title-3);
-}
+
+  strong {
+    font-size: var(--text-title-3);
+  }
 }
 </style>
