@@ -9,6 +9,7 @@ export default new Vuex.Store({
   state: {
     foods: data.foods,
     categories: data.categories,
+    combos: data.combos,
     __order: [],
     __countOrder: 0
   },
