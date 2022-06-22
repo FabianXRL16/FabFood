@@ -5,8 +5,8 @@
       <buttons-panner @changeBanner="changeBanner" />
     </div>
     <div class="details">
-      <list-foods-combo />
-      <order-combo />
+      <list-foods-combo :currentBanner="currentBanner" />
+      <order-combo :currentBanner="currentBanner" />
     </div>
   </div>
 </template>
