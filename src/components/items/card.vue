@@ -20,7 +20,7 @@
             <i class="far fa-star gray" v-for="m in 5 - food.score" :key="m * 10"></i>
           </div>
           <div>
-            <button class="countSymbol" :class="order ? 'countSymbolCancel' : ''" @click="addOrder(food.id)">{{ order ?
+            <button class="countSymbol" :class="order ? 'countSymbolCancel' : ''" @click="addOrder(food)">{{ order ?
                 'Order' : 'Order now'
             }}</button>
           </div>
@@ -51,12 +51,12 @@ export default {
     };
   },
   methods: {
-    addOrder(id) {
+    addOrder(food) {
       if (this.order) {
-        this.$store.dispatch("deleteOrder", id);
+        this.$store.dispatch("deleteOrder", food);
         this.$store.dispatch("updateCountOrder");
       } else {
-        this.$store.dispatch("addOrder", this.food);
+        this.$store.dispatch("addOrder", food);
         this.$store.dispatch("updateCountOrder");
       }
       this.order = !this.order
