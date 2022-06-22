@@ -510,6 +510,9 @@
   "combos": [
     {
       "id": "combo_1",
+      "name": "...",
+      "preparationTime": 45,
+      "count": 1,
       "foods": [
         {
           "id": "drinks_2",
@@ -567,11 +570,14 @@
         }
       ],
       "previousPrice": 162,
-      "newPrice": 148,
+      "price": 148,
       "description":"Combo 1 is lorem ipsum dolor sit amet consectetur adipisicing elit. Exinventore assumenda illo."
     },
     {
       "id": "combo_2",
+      "name": "...",
+      "preparationTime": 25,
+      "count": 1,
       "foods": [
         {
           "id": "sweets_3",
@@ -627,11 +633,14 @@
         }
       ],
       "previousPrice": 91,
-      "newPrice": 75,
+      "price": 75,
       "description":"Combo 2 is lorem ipsum dolor sit amet consectetur adipisicing elit. Exinventore assumenda illo."
     },
     {
       "id": "combo_3",
+      "name": "...",
+      "preparationTime": 25,
+      "count": 1,
       "foods": [
         {
           "id": "dinners_4",
@@ -687,7 +696,7 @@
         }
       ],
       "previousPrice": 176,
-      "newPrice": 145,
+      "price": 145,
       "description":"Combo 3 is lorem ipsum dolor sit amet consectetur adipisicing elit. Exinventore assumenda illo."
     }
   ]
