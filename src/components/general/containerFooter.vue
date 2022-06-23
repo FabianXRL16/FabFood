@@ -36,8 +36,6 @@
           :class="showForm ? 'textarea btn': 'noShow'"
           name="message"
           id=""
-          cols="30"
-          rows="5"
           placeholder="Hey cheer up!!!"
         >
         </textarea>
@@ -155,7 +153,7 @@ span {
 }
 .messageContact {
   margin: 0;
-  width: 350px;
+  width: 100%;
   font-size: 15px;
   text-align: right;
   color: var(--gray-ligth);
@@ -167,7 +165,7 @@ span {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  width: 350px;
+  width: 100%;
 }
 .actions button {
   padding: 8px 0;
@@ -183,12 +181,13 @@ span {
   border-radius: 5px;
   padding: 10px;
   background-color: var(--black-ligth);
-  width: 350px;
+  width: 100%;
   height: 90px;
   color: var(--gray-ligth);
   font-size: 16px;
   text-align: right;
   box-sizing: border-box;
+  resize: none;
 }
 .btnContact {
   display: flex;
