@@ -7,13 +7,18 @@
       you to <b>do penance with us</b>
     </p>
     <span>+(900) 123 - 456</span>
-    <button class="btn btnMain">Order Now</button>
+    <button class="btn btnMain" @click="goToFindFoods">Order Now</button>
   </div>
 </template>
 
 <script>
 export default {
   name: "PannerHome",
+  methods: {
+    goToFindFoods() {
+      this.$router.push('findFood')
+    }
+  }
 };
 </script>
 
