@@ -78,7 +78,7 @@ export default {
         {
           id: 1,
           name: "Twitter",
-          link: "https://twitter.com/_fxrl16",
+          link: "https://twitter.com/FabianXRL16",
           icon: "fab fa-twitter",
         },
         {
